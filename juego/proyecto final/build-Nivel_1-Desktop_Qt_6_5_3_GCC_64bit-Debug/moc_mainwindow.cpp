@@ -46,8 +46,8 @@ static constexpr auto qt_meta_stringdata_CLASSMainWindowENDCLASS = QtMocHelpers:
     "posicion_personaje_inicio",
     "ESPALDA",
     "linea_limite",
-    "izquierda2",
-    "derecha2"
+    "obstaculo",
+    "movimiento_obstaculo"
 );
 #else  // !QT_MOC_HAS_STRING_DATA
 struct qt_meta_stringdata_CLASSMainWindowENDCLASS_t {
@@ -60,8 +60,8 @@ struct qt_meta_stringdata_CLASSMainWindowENDCLASS_t {
     char stringdata5[26];
     char stringdata6[8];
     char stringdata7[13];
-    char stringdata8[11];
-    char stringdata9[9];
+    char stringdata8[10];
+    char stringdata9[21];
 };
 #define QT_MOC_LITERAL(ofs, len) \
     uint(sizeof(qt_meta_stringdata_CLASSMainWindowENDCLASS_t::offsetsAndSizes) + ofs), len 
@@ -75,8 +75,8 @@ Q_CONSTINIT static const qt_meta_stringdata_CLASSMainWindowENDCLASS_t qt_meta_st
         QT_MOC_LITERAL(75, 25),  // "posicion_personaje_inicio"
         QT_MOC_LITERAL(101, 7),  // "ESPALDA"
         QT_MOC_LITERAL(109, 12),  // "linea_limite"
-        QT_MOC_LITERAL(122, 10),  // "izquierda2"
-        QT_MOC_LITERAL(133, 8)   // "derecha2"
+        QT_MOC_LITERAL(122, 9),  // "obstaculo"
+        QT_MOC_LITERAL(132, 20)   // "movimiento_obstaculo"
     },
     "MainWindow",
     "definir_final_de_juego",
@@ -86,8 +86,8 @@ Q_CONSTINIT static const qt_meta_stringdata_CLASSMainWindowENDCLASS_t qt_meta_st
     "posicion_personaje_inicio",
     "ESPALDA",
     "linea_limite",
-    "izquierda2",
-    "derecha2"
+    "obstaculo",
+    "movimiento_obstaculo"
 };
 #undef QT_MOC_LITERAL
 #endif // !QT_MOC_HAS_STRING_DATA
@@ -150,9 +150,9 @@ Q_CONSTINIT const QMetaObject MainWindow::staticMetaObject = { {
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
         // method 'linea_limite'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
-        // method 'izquierda2'
+        // method 'obstaculo'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
-        // method 'derecha2'
+        // method 'movimiento_obstaculo'
         QtPrivate::TypeAndForceComplete<void, std::false_type>
     >,
     nullptr
@@ -170,8 +170,8 @@ void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         case 3: _t->posicion_personaje_inicio(); break;
         case 4: _t->ESPALDA(); break;
         case 5: _t->linea_limite(); break;
-        case 6: _t->izquierda2(); break;
-        case 7: _t->derecha2(); break;
+        case 6: _t->obstaculo(); break;
+        case 7: _t->movimiento_obstaculo(); break;
         default: ;
         }
     }

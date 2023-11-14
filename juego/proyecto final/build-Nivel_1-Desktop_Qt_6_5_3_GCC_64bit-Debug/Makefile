@@ -328,6 +328,7 @@ DIST          = /qt/6.5.3/gcc_64/mkspecs/features/spec_pre.prf \
 		/qt/6.5.3/gcc_64/mkspecs/features/qt_config.prf \
 		/qt/6.5.3/gcc_64/mkspecs/linux-g++/qmake.conf \
 		/qt/6.5.3/gcc_64/mkspecs/features/spec_post.prf \
+		../Nivel_1/.qmake.stash \
 		/qt/6.5.3/gcc_64/mkspecs/features/exclusive_builds.prf \
 		/qt/6.5.3/gcc_64/mkspecs/features/toolchain.prf \
 		/qt/6.5.3/gcc_64/mkspecs/features/default_pre.prf \
@@ -632,6 +633,7 @@ Makefile: ../Nivel_1/Nivel_1.pro /qt/6.5.3/gcc_64/mkspecs/linux-g++/qmake.conf /
 		/qt/6.5.3/gcc_64/mkspecs/features/qt_config.prf \
 		/qt/6.5.3/gcc_64/mkspecs/linux-g++/qmake.conf \
 		/qt/6.5.3/gcc_64/mkspecs/features/spec_post.prf \
+		.qmake.stash \
 		/qt/6.5.3/gcc_64/mkspecs/features/exclusive_builds.prf \
 		/qt/6.5.3/gcc_64/mkspecs/features/toolchain.prf \
 		/qt/6.5.3/gcc_64/mkspecs/features/default_pre.prf \
@@ -928,6 +930,7 @@ Makefile: ../Nivel_1/Nivel_1.pro /qt/6.5.3/gcc_64/mkspecs/linux-g++/qmake.conf /
 /qt/6.5.3/gcc_64/mkspecs/features/qt_config.prf:
 /qt/6.5.3/gcc_64/mkspecs/linux-g++/qmake.conf:
 /qt/6.5.3/gcc_64/mkspecs/features/spec_post.prf:
+.qmake.stash:
 /qt/6.5.3/gcc_64/mkspecs/features/exclusive_builds.prf:
 /qt/6.5.3/gcc_64/mkspecs/features/toolchain.prf:
 /qt/6.5.3/gcc_64/mkspecs/features/default_pre.prf:
@@ -1163,6 +1166,23 @@ moc_mainwindow.cpp: ../Nivel_1/mainwindow.h \
 		/qt/6.5.3/gcc_64/include/QtGui/QTransform \
 		/qt/6.5.3/gcc_64/include/QtCore/qnativeinterface.h \
 		/qt/6.5.3/gcc_64/include/QtWidgets/qtabwidget.h \
+		/qt/6.5.3/gcc_64/include/QtWidgets/QGraphicsScene \
+		/qt/6.5.3/gcc_64/include/QtWidgets/qgraphicsscene.h \
+		/qt/6.5.3/gcc_64/include/QtGui/qpen.h \
+		/qt/6.5.3/gcc_64/include/QtCore/QTime \
+		/qt/6.5.3/gcc_64/include/QtCore/qdatetime.h \
+		/qt/6.5.3/gcc_64/include/QtCore/qcalendar.h \
+		/qt/6.5.3/gcc_64/include/QtCore/qlocale.h \
+		/qt/6.5.3/gcc_64/include/QtCore/QTimer \
+		/qt/6.5.3/gcc_64/include/QtCore/qtimer.h \
+		/qt/6.5.3/gcc_64/include/QtCore/qbasictimer.h \
+		/qt/6.5.3/gcc_64/include/QtWidgets/QMessageBox \
+		/qt/6.5.3/gcc_64/include/QtWidgets/qmessagebox.h \
+		/qt/6.5.3/gcc_64/include/QtWidgets/qdialog.h \
+		/qt/6.5.3/gcc_64/include/QtWidgets/QGraphicsPixmapItem \
+		/qt/6.5.3/gcc_64/include/QtWidgets/qgraphicsitem.h \
+		/qt/6.5.3/gcc_64/include/QtGui/qpainterpath.h \
+		/qt/6.5.3/gcc_64/include/QtGui/QKeyEvent \
 		moc_predefs.h \
 		/qt/6.5.3/gcc_64/libexec/moc
 	/qt/6.5.3/gcc_64/libexec/moc $(DEFINES) --include '/home/juandcardenas/informatica/proyecto final/build-Nivel_1-Desktop_Qt_6_5_3_GCC_64bit-Debug/moc_predefs.h' -I/qt/6.5.3/gcc_64/mkspecs/linux-g++ -I'/home/juandcardenas/informatica/proyecto final/Nivel_1' -I/qt/6.5.3/gcc_64/include -I/qt/6.5.3/gcc_64/include/QtWidgets -I/qt/6.5.3/gcc_64/include/QtGui -I/qt/6.5.3/gcc_64/include/QtCore -I. -I/usr/include/c++/11 -I/usr/include/x86_64-linux-gnu/c++/11 -I/usr/include/c++/11/backward -I/usr/lib/gcc/x86_64-linux-gnu/11/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include ../Nivel_1/mainwindow.h -o moc_mainwindow.cpp
@@ -1347,6 +1367,23 @@ main.o: ../Nivel_1/main.cpp ../Nivel_1/mainwindow.h \
 		/qt/6.5.3/gcc_64/include/QtGui/QTransform \
 		/qt/6.5.3/gcc_64/include/QtCore/qnativeinterface.h \
 		/qt/6.5.3/gcc_64/include/QtWidgets/qtabwidget.h \
+		/qt/6.5.3/gcc_64/include/QtWidgets/QGraphicsScene \
+		/qt/6.5.3/gcc_64/include/QtWidgets/qgraphicsscene.h \
+		/qt/6.5.3/gcc_64/include/QtGui/qpen.h \
+		/qt/6.5.3/gcc_64/include/QtCore/QTime \
+		/qt/6.5.3/gcc_64/include/QtCore/qdatetime.h \
+		/qt/6.5.3/gcc_64/include/QtCore/qcalendar.h \
+		/qt/6.5.3/gcc_64/include/QtCore/qlocale.h \
+		/qt/6.5.3/gcc_64/include/QtCore/QTimer \
+		/qt/6.5.3/gcc_64/include/QtCore/qtimer.h \
+		/qt/6.5.3/gcc_64/include/QtCore/qbasictimer.h \
+		/qt/6.5.3/gcc_64/include/QtWidgets/QMessageBox \
+		/qt/6.5.3/gcc_64/include/QtWidgets/qmessagebox.h \
+		/qt/6.5.3/gcc_64/include/QtWidgets/qdialog.h \
+		/qt/6.5.3/gcc_64/include/QtWidgets/QGraphicsPixmapItem \
+		/qt/6.5.3/gcc_64/include/QtWidgets/qgraphicsitem.h \
+		/qt/6.5.3/gcc_64/include/QtGui/qpainterpath.h \
+		/qt/6.5.3/gcc_64/include/QtGui/QKeyEvent \
 		/qt/6.5.3/gcc_64/include/QtWidgets/QApplication \
 		/qt/6.5.3/gcc_64/include/QtWidgets/qapplication.h \
 		/qt/6.5.3/gcc_64/include/QtCore/qcoreapplication.h \
@@ -1367,7 +1404,6 @@ main.o: ../Nivel_1/main.cpp ../Nivel_1/mainwindow.h \
 		/qt/6.5.3/gcc_64/include/QtCore/qpromise.h \
 		/qt/6.5.3/gcc_64/include/QtGui/qguiapplication.h \
 		/qt/6.5.3/gcc_64/include/QtGui/qinputmethod.h \
-		/qt/6.5.3/gcc_64/include/QtCore/qlocale.h \
 		/qt/6.5.3/gcc_64/include/QtGui/qguiapplication_platform.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o main.o ../Nivel_1/main.cpp
 
@@ -1530,7 +1566,60 @@ mainwindow.o: ../Nivel_1/mainwindow.cpp ../Nivel_1/mainwindow.h \
 		/qt/6.5.3/gcc_64/include/QtGui/QTransform \
 		/qt/6.5.3/gcc_64/include/QtCore/qnativeinterface.h \
 		/qt/6.5.3/gcc_64/include/QtWidgets/qtabwidget.h \
-		ui_mainwindow.h
+		/qt/6.5.3/gcc_64/include/QtWidgets/QGraphicsScene \
+		/qt/6.5.3/gcc_64/include/QtWidgets/qgraphicsscene.h \
+		/qt/6.5.3/gcc_64/include/QtGui/qpen.h \
+		/qt/6.5.3/gcc_64/include/QtCore/QTime \
+		/qt/6.5.3/gcc_64/include/QtCore/qdatetime.h \
+		/qt/6.5.3/gcc_64/include/QtCore/qcalendar.h \
+		/qt/6.5.3/gcc_64/include/QtCore/qlocale.h \
+		/qt/6.5.3/gcc_64/include/QtCore/QTimer \
+		/qt/6.5.3/gcc_64/include/QtCore/qtimer.h \
+		/qt/6.5.3/gcc_64/include/QtCore/qbasictimer.h \
+		/qt/6.5.3/gcc_64/include/QtWidgets/QMessageBox \
+		/qt/6.5.3/gcc_64/include/QtWidgets/qmessagebox.h \
+		/qt/6.5.3/gcc_64/include/QtWidgets/qdialog.h \
+		/qt/6.5.3/gcc_64/include/QtWidgets/QGraphicsPixmapItem \
+		/qt/6.5.3/gcc_64/include/QtWidgets/qgraphicsitem.h \
+		/qt/6.5.3/gcc_64/include/QtGui/qpainterpath.h \
+		/qt/6.5.3/gcc_64/include/QtGui/QKeyEvent \
+		ui_mainwindow.h \
+		/qt/6.5.3/gcc_64/include/QtCore/QVariant \
+		/qt/6.5.3/gcc_64/include/QtWidgets/QApplication \
+		/qt/6.5.3/gcc_64/include/QtWidgets/qapplication.h \
+		/qt/6.5.3/gcc_64/include/QtCore/qcoreapplication.h \
+		/qt/6.5.3/gcc_64/include/QtCore/qeventloop.h \
+		/qt/6.5.3/gcc_64/include/QtCore/qcoreapplication_platform.h \
+		/qt/6.5.3/gcc_64/include/QtCore/qfuture.h \
+		/qt/6.5.3/gcc_64/include/QtCore/qfutureinterface.h \
+		/qt/6.5.3/gcc_64/include/QtCore/qmutex.h \
+		/qt/6.5.3/gcc_64/include/QtCore/qtsan_impl.h \
+		/qt/6.5.3/gcc_64/include/QtCore/qresultstore.h \
+		/qt/6.5.3/gcc_64/include/QtCore/qfuture_impl.h \
+		/qt/6.5.3/gcc_64/include/QtCore/qthreadpool.h \
+		/qt/6.5.3/gcc_64/include/QtCore/qthread.h \
+		/qt/6.5.3/gcc_64/include/QtCore/qdeadlinetimer.h \
+		/qt/6.5.3/gcc_64/include/QtCore/qelapsedtimer.h \
+		/qt/6.5.3/gcc_64/include/QtCore/qrunnable.h \
+		/qt/6.5.3/gcc_64/include/QtCore/qexception.h \
+		/qt/6.5.3/gcc_64/include/QtCore/qpromise.h \
+		/qt/6.5.3/gcc_64/include/QtGui/qguiapplication.h \
+		/qt/6.5.3/gcc_64/include/QtGui/qinputmethod.h \
+		/qt/6.5.3/gcc_64/include/QtGui/qguiapplication_platform.h \
+		/qt/6.5.3/gcc_64/include/QtWidgets/QGraphicsView \
+		/qt/6.5.3/gcc_64/include/QtWidgets/qgraphicsview.h \
+		/qt/6.5.3/gcc_64/include/QtGui/qpainter.h \
+		/qt/6.5.3/gcc_64/include/QtGui/qtextoption.h \
+		/qt/6.5.3/gcc_64/include/QtWidgets/qscrollarea.h \
+		/qt/6.5.3/gcc_64/include/QtWidgets/qabstractscrollarea.h \
+		/qt/6.5.3/gcc_64/include/QtWidgets/qframe.h \
+		/qt/6.5.3/gcc_64/include/QtWidgets/QLabel \
+		/qt/6.5.3/gcc_64/include/QtWidgets/qlabel.h \
+		/qt/6.5.3/gcc_64/include/QtGui/qpicture.h \
+		/qt/6.5.3/gcc_64/include/QtGui/qtextdocument.h \
+		/qt/6.5.3/gcc_64/include/QtWidgets/QStatusBar \
+		/qt/6.5.3/gcc_64/include/QtWidgets/qstatusbar.h \
+		/qt/6.5.3/gcc_64/include/QtWidgets/QWidget
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o mainwindow.o ../Nivel_1/mainwindow.cpp
 
 moc_mainwindow.o: moc_mainwindow.cpp 

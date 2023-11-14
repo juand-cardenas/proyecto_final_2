@@ -21,7 +21,9 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
     QTimer *timer=new QTimer();
-    QTime time;
+    QTimer *timer_2=new QTimer();
+    QTimer *timer_3=new QTimer();
+    QTime timed;
     QMessageBox msgbox;
     void keyPressEvent(QKeyEvent *e);
 
@@ -32,12 +34,16 @@ private slots:
     void posicion_personaje_inicio();
     void ESPALDA();
     void linea_limite();
+    void obstaculo();
+    void movimiento_obstaculo();
 
 
 private:
     Ui::MainWindow *ui;
     QGraphicsScene *nivel_1;
     QGraphicsPixmapItem *avatar;
+    QGraphicsLineItem *l1;
+    QGraphicsEllipseItem *c1;
 
 
 };
