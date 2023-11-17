@@ -26,6 +26,8 @@ public:
     QRectF boundingRect()const;
     void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget = nullptr);
     //GETTERS
+    int get_pos_y();
+    int get_pos_x();
 
     //DESTRUCTORES
     ~Enemigos();

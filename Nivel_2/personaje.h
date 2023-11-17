@@ -30,8 +30,8 @@ public:
     void Mov_rigth();
     //GETTERS
     QPixmap *get_mapa_sprite();
-    int getpos_x();
-    int getpos_y();
+    int get_pos_x();
+    int get_pos_y();
     //DSETRUCTOR
     ~Personaje();
 

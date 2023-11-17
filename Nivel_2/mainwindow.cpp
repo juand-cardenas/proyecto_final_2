@@ -31,18 +31,18 @@ MainWindow::MainWindow(QWidget *parent)
 
 void MainWindow::keyPressEvent(QKeyEvent *e)
 {
-    if(e->key()==Qt::Key_A && p1->getpos_x()>=0){
+    if(e->key()==Qt::Key_A && p1->get_pos_x()>=0){
 
         p1->Mov_left();
     }
-    else if(e->key()==Qt::Key_D && p1->getpos_x()<=673){
+    else if(e->key()==Qt::Key_D && p1->get_pos_x()<=673){
         p1->Mov_rigth();
     }
-    else if(e->key()==Qt::Key_W && p1->getpos_y()>=220){
+    else if(e->key()==Qt::Key_W && p1->get_pos_y()>=220){
 
         p1->Mov_up();
     }
-    else if(e->key()==Qt::Key_S && p1->getpos_y()<=436 ){
+    else if(e->key()==Qt::Key_S && p1->get_pos_y()<=436 ){
 
         p1->Mov_down();
     }

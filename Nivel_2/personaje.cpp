@@ -65,12 +65,12 @@ QPixmap *Personaje::get_mapa_sprite()
     return mapa_sprite;
 }
 
-int Personaje::getpos_x()
+int Personaje::get_pos_x()
 {
     return pos_x;
 }
 
-int Personaje::getpos_y()
+int Personaje::get_pos_y()
 {
     return pos_y;
 }

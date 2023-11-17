@@ -25,6 +25,16 @@ void Enemigos::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, 
     painter->drawPixmap(boundingRect(),*mapa_sprite_en,mapa_sprite_en->rect());
 }
 
+int Enemigos::get_pos_y()
+{
+    return pos_y;
+}
+
+int Enemigos::get_pos_x()
+{
+    return pos_x;
+}
+
 Enemigos::~Enemigos()
 {
     delete[] mapa_sprite_en;
