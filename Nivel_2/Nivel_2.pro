@@ -12,12 +12,14 @@ SOURCES += \
     enemigos.cpp \
     main.cpp \
     mainwindow.cpp \
-    personaje.cpp
+    personaje.cpp \
+    proyectil_personaje.cpp
 
 HEADERS += \
     enemigos.h \
     mainwindow.h \
-    personaje.h
+    personaje.h \
+    proyectil_personaje.h
 
 FORMS += \
     mainwindow.ui

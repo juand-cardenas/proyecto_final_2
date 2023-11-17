@@ -46,6 +46,9 @@ void MainWindow::keyPressEvent(QKeyEvent *e)
 
         p1->Mov_down();
     }
+    /*else if(){
+
+    }*/
 
 }
 
