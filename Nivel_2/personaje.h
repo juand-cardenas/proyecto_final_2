@@ -11,7 +11,7 @@ class Personaje: public QGraphicsItem
 
 private:
     //atributos:
-    int pos_x,pos_y,radio,largo=162,ancho=125,velocidad=12;
+    int pos_x,pos_y,radio,largo=162,ancho=125,velocidad=12,vida=100;
     QPixmap *mapa_sprite=new QPixmap(":/Morty/sprites/Morty/MortyDerecha1.png");
 
 public:
@@ -32,6 +32,7 @@ public:
     QPixmap *get_mapa_sprite();
     int getpos_x();
     int getpos_y();
+    //DSETRUCTOR
     ~Personaje();
 
 };

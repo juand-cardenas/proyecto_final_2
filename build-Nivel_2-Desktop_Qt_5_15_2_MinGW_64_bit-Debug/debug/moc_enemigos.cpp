@@ -85,6 +85,8 @@ void *Enemigos::qt_metacast(const char *_clname)
         return static_cast<void*>(this);
     if (!strcmp(_clname, "QGraphicsItem"))
         return static_cast< QGraphicsItem*>(this);
+    if (!strcmp(_clname, "org.qt-project.Qt.QGraphicsItem"))
+        return static_cast< QGraphicsItem*>(this);
     return QObject::qt_metacast(_clname);
 }
 

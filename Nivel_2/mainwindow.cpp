@@ -18,17 +18,13 @@ MainWindow::MainWindow(QWidget *parent)
 
     l1= scene2->addLine(0,220,0,600);//Y
    l2= scene2->addLine(0,220,700,220);//X
-    pm.load(":/Morty/sprites/Morty/MortyDerecha1.png");
-    personaje=new QGraphicsPixmapItem();
-    p1=new Personaje (20,20);
+
+
+    p1=new Personaje (675,438);
     scene2->addItem(p1);
+    e=new Enemigos(0,438);
 
-
-    scene2->addItem(personaje);
-    //fig->setScale(0.5);
-    personaje->setPixmap(pm);
-    personaje->setPos(100,438);
-
+    scene2->addItem(e);
 
 
 }

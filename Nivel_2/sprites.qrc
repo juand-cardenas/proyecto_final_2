@@ -22,4 +22,8 @@
     <qresource prefix="/Background">
         <file>sprites/background/prueba.png</file>
     </qresource>
+    <qresource prefix="/Enemigo">
+        <file>sprites/Enemigos/enemigo_derecha2.png</file>
+        <file>sprites/Enemigos/enemigo_derecha1.png</file>
+    </qresource>
 </RCC>
