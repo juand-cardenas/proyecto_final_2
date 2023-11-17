@@ -26,6 +26,7 @@ public:
     QTimer *timer_3=new QTimer();
     QTime timed;
     QMessageBox msgbox;
+
     void keyPressEvent(QKeyEvent *e);
 
 private slots:
@@ -37,7 +38,7 @@ private slots:
     void linea_limite();
     void obstaculo();
     void movimiento_obstaculo();
-    void agregar_a_lista();
+    int num_aleatorio();
 
 
 private:
@@ -46,7 +47,7 @@ private:
     QGraphicsPixmapItem *avatar;
     QGraphicsLineItem *l1;
     QGraphicsEllipseItem *c1;
-    vector<QGraphicsEllipseItem*>hola;
+    vector<QGraphicsEllipseItem*>hola={};
 
 };
 #endif // MAINWINDOW_H

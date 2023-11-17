@@ -5,6 +5,7 @@
 #include <QTimer>
 #include <stdlib.h>
 #include <time.h>
+#include <QDebug>
 
 
 MainWindow::MainWindow(QWidget *parent)
@@ -22,7 +23,7 @@ MainWindow::MainWindow(QWidget *parent)
     ui->graphicsView->scale(1.136,1.133);
 
     connect(timer, SIGNAL(timeout()), this, SLOT(actualizar_estado()));
-    //connect(timer_2, SIGNAL(timeout()), this, SLOT(obstaculo()));
+    //connect(timer_2, SIGNAL(timeout()), this, SLOT(agregar_a_lista()));
     obstaculo();
 
     posicion_personaje_inicio();
@@ -65,8 +66,8 @@ void MainWindow:: posicion_personaje_inicio(){
     timed.setHMS(0,3,20);
     ui->Cronometro->setText(timed.toString("m:ss"));
     timer->start(1000);
-    timer_2->start(1000);
-    timer_3->start(100);
+    timer_2->start(100);
+    timer_3->start(1000);
     QPixmap espalda("espalda.png");
     avatar=new QGraphicsPixmapItem();
     nivel_1->addItem(avatar);
@@ -115,34 +116,41 @@ void MainWindow :: linea_limite(){
 
 void MainWindow :: obstaculo(){
 
-    int rando_pos;
-    srand(time(NULL));
-    rando_pos=-8+rand()%(636+8);
+
+    /*srand(time(NULL));
+    rando_pos=-8+rand()%(636+8);*/
     QPen line(Qt::black,4,Qt::SolidLine,Qt::RoundCap,Qt::RoundJoin);
     QBrush inter(Qt::black);
-    c1=nivel_1->addEllipse(0,0,12,12,line,inter);
-    c1->setPos(rando_pos,160);
+    /*c1=nivel_1->addEllipse(0,0,12,12,line,inter);
+    c1->setPos(rando_pos,160);*/
+    size_t n=4500;
+    int d=-8;
+    for (size_t i=0;i<n;i++){
 
-    //connect(timer_3, SIGNAL(timeout()), this, SLOT(movimiento_obstaculo()));
-
-}
-
-void MainWindow::agregar_a_lista(){
-    for(int i=0;i<10;i++){
-        obstaculo();
-        hola.push_back(c1);
+        //QDebug<<rando_pos;
+        auto *c= new QGraphicsEllipseItem(num_aleatorio(),160-d,12,12);
+        srand(time(NULL));
+        nivel_1->addItem(c);
+        //c->setPos(rando_pos,160);
+        hola.push_back(c);
+        d+=18;
     }
 
 }
+
+int MainWindow::num_aleatorio(){
+    int rando_pos;
+    srand(time(NULL));
+    rando_pos=-8+rand()%(636+8);
+    return rando_pos;
+}
 void MainWindow :: movimiento_obstaculo(){
-    for(int i=0;i<10;i++){
-    hola[i]->setPos(hola[i]->pos().x(),hola[i]->pos().y()+2);
-    if(hola[i]->pos().y()+4>522){
+    for(int i=0;i<4500;i++){
+        hola[i]->setPos(hola[i]->pos().x(),hola[i]->pos().y()+12);
+    if(hola[i]->pos().y()+12>522){
         //obstaculo();
-        int rando_pos;
-        srand(time(NULL));
-        rando_pos=-8+rand()%(636+8);
-        hola[i]->setPos(rando_pos,160);
+
+            hola[i]->setPos(num_aleatorio(),260);
 
 
     }
