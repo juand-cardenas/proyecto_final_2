@@ -23,14 +23,10 @@ MainWindow::MainWindow(QWidget *parent)
     ui->graphicsView->scale(1.136,1.133);
 
     connect(timer, SIGNAL(timeout()), this, SLOT(actualizar_estado()));
-    //connect(timer_2, SIGNAL(timeout()), this, SLOT(agregar_a_lista()));
-    obstaculo();
-
-    posicion_personaje_inicio();
-
-
-
     connect(timer_3, SIGNAL(timeout()), this, SLOT(movimiento_obstaculo()));
+
+    obstaculo();
+    posicion_personaje_inicio();
 
 
 
@@ -66,8 +62,7 @@ void MainWindow:: posicion_personaje_inicio(){
     timed.setHMS(0,3,20);
     ui->Cronometro->setText(timed.toString("m:ss"));
     timer->start(1000);
-    timer_2->start(100);
-    timer_3->start(1000);
+    timer_3->start(500);
     QPixmap espalda("espalda.png");
     avatar=new QGraphicsPixmapItem();
     nivel_1->addItem(avatar);
@@ -119,21 +114,25 @@ void MainWindow :: obstaculo(){
 
     /*srand(time(NULL));
     rando_pos=-8+rand()%(636+8);*/
-    QPen line(Qt::black,4,Qt::SolidLine,Qt::RoundCap,Qt::RoundJoin);
+    QPen line(Qt::red,2,Qt::SolidLine,Qt::RoundCap,Qt::RoundJoin);
     QBrush inter(Qt::black);
     /*c1=nivel_1->addEllipse(0,0,12,12,line,inter);
     c1->setPos(rando_pos,160);*/
-    size_t n=4500;
-    int d=-8;
+    size_t n=17;
+    int d=-8,num;
+    srand(time(NULL));
     for (size_t i=0;i<n;i++){
-
+        int rando_pos=-8 + rand()%(630-8);
+        num=rando_pos;
         //QDebug<<rando_pos;
-        auto *c= new QGraphicsEllipseItem(num_aleatorio(),160-d,12,12);
-        srand(time(NULL));
+        auto *c= new QGraphicsEllipseItem(0,0,16,16);
+        c->setBrush(inter);
+        c->setPen(line);
+        c->setPos(num,160);
         nivel_1->addItem(c);
         //c->setPos(rando_pos,160);
         hola.push_back(c);
-        d+=18;
+        d+=8;
     }
 
 }
@@ -145,12 +144,15 @@ int MainWindow::num_aleatorio(){
     return rando_pos;
 }
 void MainWindow :: movimiento_obstaculo(){
-    for(int i=0;i<4500;i++){
+    int num;
+    srand(time(NULL));
+    for(int i=0;i<17;i++){
         hola[i]->setPos(hola[i]->pos().x(),hola[i]->pos().y()+12);
-    if(hola[i]->pos().y()+12>522){
-        //obstaculo();
+    if(hola[i]->pos().y()>599){
+            int rando_pos=-8 + rand()%(630-8);
+            num=rando_pos;
+            hola[i]->setPos(num,160);
 
-            hola[i]->setPos(num_aleatorio(),260);
 
 
     }
