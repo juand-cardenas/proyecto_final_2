@@ -379,6 +379,10 @@ debug/moc_mainwindow.cpp: ../Nivel_2/mainwindow.h \
 		../Nivel_2/enemigos.h \
 		C:/Qt/5.15.2/mingw81_64/include/QtCore/QObject \
 		C:/Qt/5.15.2/mingw81_64/include/QtGui/Qpainter \
+		../Nivel_2/proyectil_personaje.h \
+		C:/Qt/5.15.2/mingw81_64/include/QtCore/QTimer \
+		C:/Qt/5.15.2/mingw81_64/include/QtCore/qtimer.h \
+		C:/Qt/5.15.2/mingw81_64/include/QtCore/qbasictimer.h \
 		debug/moc_predefs.h \
 		C:/Qt/5.15.2/mingw81_64/bin/moc.exe
 	C:\Qt\5.15.2\mingw81_64\bin\moc.exe $(DEFINES) --include "C:/Users/User/Documents/MATERIAS/SEMESTRE 2/Informatica 2 20232/Proyecto/proyecto_final_2/build-Nivel_2-Desktop_Qt_5_15_2_MinGW_64_bit-Debug/debug/moc_predefs.h" -IC:/Qt/5.15.2/mingw81_64/mkspecs/win32-g++ -I"C:/Users/User/Documents/MATERIAS/SEMESTRE 2/Informatica 2 20232/Proyecto/proyecto_final_2/Nivel_2" -IC:/Qt/5.15.2/mingw81_64/include -IC:/Qt/5.15.2/mingw81_64/include/QtWidgets -IC:/Qt/5.15.2/mingw81_64/include/QtGui -IC:/Qt/5.15.2/mingw81_64/include/QtANGLE -IC:/Qt/5.15.2/mingw81_64/include/QtCore -I. -IC:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++ -IC:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/x86_64-w64-mingw32 -IC:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/backward -IC:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include -IC:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include-fixed -IC:/Qt/Tools/mingw810_64/x86_64-w64-mingw32/include ..\Nivel_2\mainwindow.h -o debug\moc_mainwindow.cpp
@@ -484,6 +488,9 @@ debug/moc_proyectil_personaje.cpp: ../Nivel_2/proyectil_personaje.h \
 		C:/Qt/5.15.2/mingw81_64/include/QtGui/qfont.h \
 		C:/Qt/5.15.2/mingw81_64/include/QtGui/qfontmetrics.h \
 		C:/Qt/5.15.2/mingw81_64/include/QtWidgets/QGraphicsPixmapItem \
+		C:/Qt/5.15.2/mingw81_64/include/QtCore/QTimer \
+		C:/Qt/5.15.2/mingw81_64/include/QtCore/qtimer.h \
+		C:/Qt/5.15.2/mingw81_64/include/QtCore/qbasictimer.h \
 		debug/moc_predefs.h \
 		C:/Qt/5.15.2/mingw81_64/bin/moc.exe
 	C:\Qt\5.15.2\mingw81_64\bin\moc.exe $(DEFINES) --include "C:/Users/User/Documents/MATERIAS/SEMESTRE 2/Informatica 2 20232/Proyecto/proyecto_final_2/build-Nivel_2-Desktop_Qt_5_15_2_MinGW_64_bit-Debug/debug/moc_predefs.h" -IC:/Qt/5.15.2/mingw81_64/mkspecs/win32-g++ -I"C:/Users/User/Documents/MATERIAS/SEMESTRE 2/Informatica 2 20232/Proyecto/proyecto_final_2/Nivel_2" -IC:/Qt/5.15.2/mingw81_64/include -IC:/Qt/5.15.2/mingw81_64/include/QtWidgets -IC:/Qt/5.15.2/mingw81_64/include/QtGui -IC:/Qt/5.15.2/mingw81_64/include/QtANGLE -IC:/Qt/5.15.2/mingw81_64/include/QtCore -I. -IC:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++ -IC:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/x86_64-w64-mingw32 -IC:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/backward -IC:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include -IC:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include-fixed -IC:/Qt/Tools/mingw810_64/x86_64-w64-mingw32/include ..\Nivel_2\proyectil_personaje.h -o debug\moc_proyectil_personaje.cpp
@@ -737,6 +744,10 @@ debug/main.o: ../Nivel_2/main.cpp ../Nivel_2/mainwindow.h \
 		../Nivel_2/enemigos.h \
 		C:/Qt/5.15.2/mingw81_64/include/QtCore/QObject \
 		C:/Qt/5.15.2/mingw81_64/include/QtGui/Qpainter \
+		../Nivel_2/proyectil_personaje.h \
+		C:/Qt/5.15.2/mingw81_64/include/QtCore/QTimer \
+		C:/Qt/5.15.2/mingw81_64/include/QtCore/qtimer.h \
+		C:/Qt/5.15.2/mingw81_64/include/QtCore/qbasictimer.h \
 		C:/Qt/5.15.2/mingw81_64/include/QtWidgets/QApplication \
 		C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qapplication.h \
 		C:/Qt/5.15.2/mingw81_64/include/QtCore/qcoreapplication.h \
@@ -869,28 +880,11 @@ debug/mainwindow.o: ../Nivel_2/mainwindow.cpp ../Nivel_2/mainwindow.h \
 		../Nivel_2/enemigos.h \
 		C:/Qt/5.15.2/mingw81_64/include/QtCore/QObject \
 		C:/Qt/5.15.2/mingw81_64/include/QtGui/Qpainter \
-		ui_mainwindow.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtCore/QVariant \
-		C:/Qt/5.15.2/mingw81_64/include/QtWidgets/QApplication \
-		C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qapplication.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtCore/qcoreapplication.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtCore/qeventloop.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qdesktopwidget.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtGui/qguiapplication.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtGui/qinputmethod.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtWidgets/QGraphicsView \
-		C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qgraphicsview.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qscrollarea.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qabstractscrollarea.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qframe.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtWidgets/QMenuBar \
-		C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qmenubar.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qmenu.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qaction.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qactiongroup.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtWidgets/QStatusBar \
-		C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qstatusbar.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtWidgets/QWidget
+		../Nivel_2/proyectil_personaje.h \
+		C:/Qt/5.15.2/mingw81_64/include/QtCore/QTimer \
+		C:/Qt/5.15.2/mingw81_64/include/QtCore/qtimer.h \
+		C:/Qt/5.15.2/mingw81_64/include/QtCore/qbasictimer.h \
+		ui_mainwindow.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\mainwindow.o ..\Nivel_2\mainwindow.cpp
 
 debug/personaje.o: ../Nivel_2/personaje.cpp ../Nivel_2/personaje.h \
@@ -1104,7 +1098,10 @@ debug/proyectil_personaje.o: ../Nivel_2/proyectil_personaje.cpp ../Nivel_2/proye
 		C:/Qt/5.15.2/mingw81_64/include/QtGui/qfontinfo.h \
 		C:/Qt/5.15.2/mingw81_64/include/QtGui/qfont.h \
 		C:/Qt/5.15.2/mingw81_64/include/QtGui/qfontmetrics.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtWidgets/QGraphicsPixmapItem
+		C:/Qt/5.15.2/mingw81_64/include/QtWidgets/QGraphicsPixmapItem \
+		C:/Qt/5.15.2/mingw81_64/include/QtCore/QTimer \
+		C:/Qt/5.15.2/mingw81_64/include/QtCore/qtimer.h \
+		C:/Qt/5.15.2/mingw81_64/include/QtCore/qbasictimer.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\proyectil_personaje.o ..\Nivel_2\proyectil_personaje.cpp
 
 debug/qrc_sprites.o: debug/qrc_sprites.cpp 

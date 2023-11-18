@@ -1,2 +1,12 @@
 
 *.Debug
+build-Nivel_2-Desktop_Qt_5_15_2_MinGW_64_bit-Debug/Makefile.Release
+build-Nivel_2-Desktop_Qt_5_15_2_MinGW_64_bit-Debug/Makefile.Debug
+build-Nivel_2-Desktop_Qt_5_15_2_MinGW_64_bit-Debug/debug/proyectil_personaje.o
+build-Nivel_2-Desktop_Qt_5_15_2_MinGW_64_bit-Debug/debug/Nivel_2.exe
+build-Nivel_2-Desktop_Qt_5_15_2_MinGW_64_bit-Debug/debug/moc_proyectil_personaje.o
+build-Nivel_2-Desktop_Qt_5_15_2_MinGW_64_bit-Debug/debug/moc_mainwindow.o
+build-Nivel_2-Desktop_Qt_5_15_2_MinGW_64_bit-Debug/debug/mainwindow.o
+build-Nivel_2-Desktop_Qt_5_15_2_MinGW_64_bit-Debug/debug/main.o
+*.Release
+*.Debug
