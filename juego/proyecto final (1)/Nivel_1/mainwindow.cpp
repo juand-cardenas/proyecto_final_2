@@ -52,6 +52,10 @@ void MainWindow::actualizar_cronometro(){
     ui->Cronometro->setText(timed.toString("m:ss"));
 }
 
+void MainWindow :: actualizar_enemigos(){
+
+}
+
 void MainWindow :: actualizar_estado(){
     actualizar_cronometro();
     definir_final_de_juego();
@@ -110,50 +114,39 @@ void MainWindow :: linea_limite(){
 }
 
 void MainWindow :: obstaculo(){
-
-
-    /*srand(time(NULL));
-    rando_pos=-8+rand()%(636+8);*/
     QPen line(Qt::red,2,Qt::SolidLine,Qt::RoundCap,Qt::RoundJoin);
     QBrush inter(Qt::black);
-    /*c1=nivel_1->addEllipse(0,0,12,12,line,inter);
-    c1->setPos(rando_pos,160);*/
-    size_t n=17;
-    int d=-8,num;
+    size_t n=70;
+    int d=-8,num,num_2;
     srand(time(NULL));
     for (size_t i=0;i<n;i++){
         int rando_pos=-8 + rand()%(630-8);
+        int rando_posy= -50 +rand()% (103-3);
         num=rando_pos;
-        //QDebug<<rando_pos;
+        num_2=rando_posy;
         auto *c= new QGraphicsEllipseItem(0,0,16,16);
         c->setBrush(inter);
         c->setPen(line);
-        c->setPos(num,160);
+        c->setPos(num,num_2);
         nivel_1->addItem(c);
-        //c->setPos(rando_pos,160);
         hola.push_back(c);
         d+=8;
     }
 
 }
 
-int MainWindow::num_aleatorio(){
-    int rando_pos;
-    srand(time(NULL));
-    rando_pos=-8+rand()%(636+8);
-    return rando_pos;
-}
+
 void MainWindow :: movimiento_obstaculo(){
-    int num;
+    int num,num_2;
     srand(time(NULL));
-    for(int i=0;i<17;i++){
+    for(int i=0;i<10;i++){
         hola[i]->setPos(hola[i]->pos().x(),hola[i]->pos().y()+12);
-    if(hola[i]->pos().y()>599){
+    if(hola[i]->pos().y()>=650){
             int rando_pos=-8 + rand()%(630-8);
+            int rando_posy= -50 +rand()% (103-3);
             num=rando_pos;
-            hola[i]->setPos(num,160);
-
-
+            num_2=rando_posy;
+            hola[i]->setPos(num,num_2);
 
     }
     }

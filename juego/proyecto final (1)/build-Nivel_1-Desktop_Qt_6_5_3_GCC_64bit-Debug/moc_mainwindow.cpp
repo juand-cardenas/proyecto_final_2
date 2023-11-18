@@ -48,7 +48,7 @@ static constexpr auto qt_meta_stringdata_CLASSMainWindowENDCLASS = QtMocHelpers:
     "linea_limite",
     "obstaculo",
     "movimiento_obstaculo",
-    "num_aleatorio"
+    "actualizar_enemigos"
 );
 #else  // !QT_MOC_HAS_STRING_DATA
 struct qt_meta_stringdata_CLASSMainWindowENDCLASS_t {
@@ -63,7 +63,7 @@ struct qt_meta_stringdata_CLASSMainWindowENDCLASS_t {
     char stringdata7[13];
     char stringdata8[10];
     char stringdata9[21];
-    char stringdata10[14];
+    char stringdata10[20];
 };
 #define QT_MOC_LITERAL(ofs, len) \
     uint(sizeof(qt_meta_stringdata_CLASSMainWindowENDCLASS_t::offsetsAndSizes) + ofs), len 
@@ -79,7 +79,7 @@ Q_CONSTINIT static const qt_meta_stringdata_CLASSMainWindowENDCLASS_t qt_meta_st
         QT_MOC_LITERAL(109, 12),  // "linea_limite"
         QT_MOC_LITERAL(122, 9),  // "obstaculo"
         QT_MOC_LITERAL(132, 20),  // "movimiento_obstaculo"
-        QT_MOC_LITERAL(153, 13)   // "num_aleatorio"
+        QT_MOC_LITERAL(153, 19)   // "actualizar_enemigos"
     },
     "MainWindow",
     "definir_final_de_juego",
@@ -91,7 +91,7 @@ Q_CONSTINIT static const qt_meta_stringdata_CLASSMainWindowENDCLASS_t qt_meta_st
     "linea_limite",
     "obstaculo",
     "movimiento_obstaculo",
-    "num_aleatorio"
+    "actualizar_enemigos"
 };
 #undef QT_MOC_LITERAL
 #endif // !QT_MOC_HAS_STRING_DATA
@@ -130,7 +130,7 @@ Q_CONSTINIT static const uint qt_meta_data_CLASSMainWindowENDCLASS[] = {
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
-    QMetaType::Int,
+    QMetaType::Void,
 
        0        // eod
 };
@@ -160,8 +160,8 @@ Q_CONSTINIT const QMetaObject MainWindow::staticMetaObject = { {
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
         // method 'movimiento_obstaculo'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
-        // method 'num_aleatorio'
-        QtPrivate::TypeAndForceComplete<int, std::false_type>
+        // method 'actualizar_enemigos'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>
     >,
     nullptr
 } };
@@ -180,11 +180,11 @@ void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         case 5: _t->linea_limite(); break;
         case 6: _t->obstaculo(); break;
         case 7: _t->movimiento_obstaculo(); break;
-        case 8: { int _r = _t->num_aleatorio();
-            if (_a[0]) *reinterpret_cast< int*>(_a[0]) = std::move(_r); }  break;
+        case 8: _t->actualizar_enemigos(); break;
         default: ;
         }
     }
+    (void)_a;
 }
 
 const QMetaObject *MainWindow::metaObject() const

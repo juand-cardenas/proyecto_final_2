@@ -38,7 +38,7 @@ private slots:
     void linea_limite();
     void obstaculo();
     void movimiento_obstaculo();
-    int num_aleatorio();
+    void actualizar_enemigos();
 
 
 private:
@@ -46,7 +46,6 @@ private:
     QGraphicsScene *nivel_1;
     QGraphicsPixmapItem *avatar;
     QGraphicsLineItem *l1;
-    QGraphicsEllipseItem *c1;
     vector<QGraphicsEllipseItem*>hola={};
 
 };
