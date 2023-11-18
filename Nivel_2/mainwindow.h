@@ -6,8 +6,9 @@
 #include<QGraphicsPixmapItem>
 #include <QKeyEvent>
 #include <QPixmap>
-#include<personaje.h>
-#include<enemigos.h>
+#include"personaje.h"
+#include"enemigos.h"
+#include "proyectil_personaje.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -30,5 +31,6 @@ private:
     QPixmap pm;
     Enemigos *e;
     Personaje *p1,*p2;
+    Proyectil_personaje *bullet;
 };
 #endif // MAINWINDOW_H

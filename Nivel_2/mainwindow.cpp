@@ -46,9 +46,30 @@ void MainWindow::keyPressEvent(QKeyEvent *e)
 
         p1->Mov_down();
     }
-    /*else if(){
+    else if(e->key()==Qt::Key_Space){
 
-    }*/
+        bullet=new Proyectil_personaje(p1->get_pos_x(),p1->get_pos_y());
+        QPixmap izquierda1(":/Morty/sprites/Morty/MortyIzquierda1.png");
+        QPixmap derecha1(":/Morty/sprites/Morty/MortyIzquierda1.png");
+        QPixmap frente1(":/Morty/sprites/Morty/MortyIzquierda1.png");
+        QPixmap detras1(":/Morty/sprites/Morty/MortyIzquierda1.png");
+        if(*p1->get_mapa_sprite()==izquierda1 ){
+            //DISPARA A LA IZQUIERDA
+           scene2->addItem(bullet);
+        }
+        else if(*p1->get_mapa_sprite()==derecha1){
+             //DISPARA A LA DERECHA
+        }
+        else if(*p1->get_mapa_sprite()==frente1){
+             //DISPARA  LA ABAJO
+        }
+        else if(*p1->get_mapa_sprite()==detras1){
+             //DISPARA A ARRIBA
+        }
+
+
+
+    }
 
 }
 
