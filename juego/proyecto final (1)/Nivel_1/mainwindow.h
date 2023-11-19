@@ -30,6 +30,7 @@ public:
     void keyPressEvent(QKeyEvent *e);
 
 private slots:
+
     void definir_final_de_juego();
     void actualizar_estado();
     void actualizar_cronometro();
@@ -39,9 +40,12 @@ private slots:
     void obstaculo();
     void movimiento_obstaculo();
     void actualizar_enemigos();
-
+    void colicion();
 
 private:
+    int cant_enemi;
+    float vely;
+    float y;
     Ui::MainWindow *ui;
     QGraphicsScene *nivel_1;
     QGraphicsPixmapItem *avatar;
