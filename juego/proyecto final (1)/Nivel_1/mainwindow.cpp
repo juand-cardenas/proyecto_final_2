@@ -13,38 +13,71 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+
     nivel_1=new QGraphicsScene();
     ui->graphicsView->setScene(nivel_1);
-
     QImage fondo_1("cancha_2.jpeg");
     QBrush fondo_pinta(fondo_1);
     ui->graphicsView->setBackgroundBrush(fondo_pinta);
     nivel_1->setSceneRect(215,360,215,95);
     ui->graphicsView->scale(1.136,1.133);
 
-    connect(timer, SIGNAL(timeout()), this, SLOT(actualizar_estado()));
-    connect(timer_3, SIGNAL(timeout()), this, SLOT(movimiento_obstaculo()));
-    connect(timer_3, SIGNAL(timeout()), this, SLOT(colicion()));
-    obstaculo();
     posicion_personaje_inicio();
-    //colicion();
+    obstaculo();
+    inicio_juego();
+
+
+    connect(timer_1, SIGNAL(timeout()), this, SLOT(actualizar_estado()));
+    connect(timer_3, SIGNAL(timeout()), this, SLOT(movimiento_obstaculo()));
+    connect(timer_2, SIGNAL(timeout()), this, SLOT(colicion()));
+
+
+
+
+
+}
+
+void MainWindow :: inicio_juego(){
+    timed.setHMS(0,3,20);
+    ui->Cronometro->setText(timed.toString("m:ss"));
+    timer_1->start(1000);
+    timer_2->start(100);
+    timer_3->start(500);
+    avatar->setPos(320,590);
+    linea_limite();
 
 
 
 }
 
 void MainWindow :: definir_final_de_juego(){
-    msgbox.setWindowTitle("Jueo terminado");
+    msgbox.setWindowTitle("juego terminado");
     msgbox.setIcon(QMessageBox::Information);
-    msgbox.setStandardButtons(QMessageBox:: Yes);
-    msgbox.addButton(QMessageBox:: No);
-    msgbox.setDefaultButton(QMessageBox:: Yes);
-    msgbox.setEscapeButton(QMessageBox:: No);
+    msgbox.setStandardButtons(QMessageBox::Yes);
+    msgbox.addButton(QMessageBox::No);
+    msgbox.setDefaultButton(QMessageBox::Yes);
+    msgbox.setEscapeButton(QMessageBox::No);
 
-    if(timed.toString()=="00:00:00"){
-        timer->stop();
-        msgbox.setText("Haz ganado ");
+    if(avatar->pos().y()<=226){
+        timer_1->stop();
+        timer_2->stop();
+        timer_3->stop();
+        msgbox.setText("haz perdido, ¿desea volver a jugar?");
+        if(QMessageBox::Yes==msgbox.exec()){
+            //crear metodo para inicarlizar el programa
+             inicio_juego();
 
+        }
+        else{
+            QCoreApplication::quit();
+        }
+    }
+    else{
+        if(timed.toString()=="00:00:00"){
+            timer_1->stop();
+            timer_3->stop();
+            timer_2->stop();
+        }
     }
 }
 
@@ -87,18 +120,11 @@ void MainWindow :: actualizar_estado(){
 }
 
 void MainWindow:: posicion_personaje_inicio(){
-    timed.setHMS(0,3,20);
-    ui->Cronometro->setText(timed.toString("m:ss"));
-    timer->start(1000);
-    timer_2->start(100);
-    timer_3->start(500);
     QPixmap espalda("espalda.png");
     avatar=new QGraphicsPixmapItem();
     nivel_1->addItem(avatar);
     avatar-> setScale(0.4);
     avatar->setPixmap(espalda);
-    avatar->setPos(320,590);
-    linea_limite();
 }
 
 void MainWindow:: ESPALDA(){

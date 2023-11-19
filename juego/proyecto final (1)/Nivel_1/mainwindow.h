@@ -21,7 +21,7 @@ class MainWindow : public QMainWindow
 public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
-    QTimer *timer=new QTimer();
+    QTimer *timer_1=new QTimer();
     QTimer *timer_2=new QTimer();
     QTimer *timer_3=new QTimer();
     QTime timed;
@@ -41,6 +41,7 @@ private slots:
     void movimiento_obstaculo();
     void actualizar_enemigos();
     void colicion();
+    void inicio_juego();
 
 private:
     int cant_enemi;
