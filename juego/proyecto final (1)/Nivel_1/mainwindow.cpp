@@ -28,7 +28,9 @@ MainWindow::MainWindow(QWidget *parent)
     posicion_personaje_inicio();
     obstaculo();
 
-
+    connect(timer_1, SIGNAL(timeout()), this, SLOT(actualizar_estado()));
+    connect(timer_3, SIGNAL(timeout()), this, SLOT(movimiento_obstaculo()));
+    connect(timer_2, SIGNAL(timeout()), this, SLOT(colicion()));
 
 
 
@@ -68,9 +70,8 @@ void MainWindow :: inicio_juego(){
         num_2=rando_posy;
         hola[i]->setPos(num,num_2);
     }
-    connect(timer_1, SIGNAL(timeout()), this, SLOT(actualizar_estado()));
-    connect(timer_3, SIGNAL(timeout()), this, SLOT(movimiento_obstaculo()));
-    connect(timer_2, SIGNAL(timeout()), this, SLOT(colicion()));
+    cant_enemi=5;
+    vely=10.18;
 
 }
 
