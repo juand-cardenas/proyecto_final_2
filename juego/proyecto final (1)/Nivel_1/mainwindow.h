@@ -31,6 +31,7 @@ public:
 
 private slots:
 
+    void escena_1();
     void definir_final_de_juego();
     void actualizar_estado();
     void actualizar_cronometro();
@@ -44,11 +45,12 @@ private slots:
     void inicio_juego();
 
 private:
+    bool estado_escena;
     int cant_enemi;
     float vely;
     float y;
     Ui::MainWindow *ui;
-    QGraphicsScene *nivel_1;
+    QGraphicsScene *nivel_1,*nivel_0;
     QGraphicsPixmapItem *avatar;
     QGraphicsLineItem *l1;
     vector<QGraphicsEllipseItem*>hola={};
