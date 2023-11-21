@@ -1,20 +1,34 @@
 #include "proyectil_personaje.h"
+#include <QDebug>
 
 Proyectil_personaje::Proyectil_personaje()
 {
 
 }
 
-Proyectil_personaje::Proyectil_personaje(int x, int y)
+Proyectil_personaje::Proyectil_personaje(int x, int y,char direccion)
 {
     pos_x=x;
     pos_y=y;
     setPos(pos_x,pos_y);
-    connect(timer,SIGNAL(timeout()),this,SLOT(Mov_up()));
-    connect(timer,SIGNAL(timeout()),this,SLOT(Mov_down()));
-    connect(timer,SIGNAL(timeout()),this,SLOT(Mov_left()));
-    connect(timer,SIGNAL(timeout()),this,SLOT(Mov_rigth()));
-    timer->start(500);
+    if(direccion=='l'){
+        qDebug()<<"izquierda";
+        connect(timer,SIGNAL(timeout()),this,SLOT(Mov_left()));
+    }
+    else if(direccion=='r'){
+        qDebug()<<"derecha";
+        connect(timer,SIGNAL(timeout()),this,SLOT(Mov_rigth()));
+    }
+    else if(direccion=='u'){
+        qDebug()<<"Arriba";
+        connect(timer,SIGNAL(timeout()),this,SLOT(Mov_up()));
+    }
+    else if(direccion=='d'){
+        qDebug()<<"Abajo";
+        connect(timer,SIGNAL(timeout()),this,SLOT(Mov_down()));
+    }
+    timer->start(15);
+
 }
 
 QRectF Proyectil_personaje::boundingRect() const
@@ -56,5 +70,5 @@ void Proyectil_personaje::Mov_rigth()
 
 Proyectil_personaje::~Proyectil_personaje()
 {
-    delete [] mapa_proyec_per;
+    delete  mapa_proyec_per;
 }

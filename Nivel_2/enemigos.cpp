@@ -35,7 +35,33 @@ int Enemigos::get_pos_x()
     return pos_x;
 }
 
+int Enemigos::get_velocidad()
+{
+    return velocidad;
+}
+
+void Enemigos::persecucion_personaje(int personaje_x, int personaje_y)
+{
+    int _x=x(),_y=y();
+    int dy=y()-personaje_y,dx=x()-personaje_x;
+    if(dx>0){
+        _x-=velocidad;
+    }
+    else if(dx<0){
+        _x+=velocidad;
+    }
+    if(dy>0){
+        _y-=velocidad;
+    }
+    else if(dy<0){
+        _y+=velocidad;
+
+    }
+    setPos(_x,_y);
+
+}
+
 Enemigos::~Enemigos()
 {
-    delete[] mapa_sprite_en;
+    delete mapa_sprite_en;
 }

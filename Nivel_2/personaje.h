@@ -1,17 +1,22 @@
 #ifndef PERSONAJE_H
 #define PERSONAJE_H
 #include<QGraphicsItem>
+#include<QGraphicsScene>
 #include<QPainter>
 #include<QGraphicsPixmapItem>
 #include<QPixmap>
 #include <QKeyEvent>
+#include<QObject>
 
-class Personaje: public QGraphicsItem
+
+
+class Personaje:public QObject, public QGraphicsItem
 {
-
+    Q_OBJECT
+    Q_INTERFACES(QGraphicsItem)
 private:
     //atributos:
-    int pos_x,pos_y,radio,largo=162,ancho=125,velocidad=12,vida=100;
+    int pos_x,pos_y,largo=125,ancho=125,velocidad=20,vida=100;
     QPixmap *mapa_sprite=new QPixmap(":/Morty/sprites/Morty/MortyDerecha1.png");
 
 public:

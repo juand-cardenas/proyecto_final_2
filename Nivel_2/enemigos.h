@@ -6,6 +6,9 @@
 #include<Qpainter>
 #include<QGraphicsPixmapItem>
 #include<QPixmap>
+#include<QTimer>
+#include"personaje.h"
+
 
 class Enemigos: public QObject,public QGraphicsItem
 {
@@ -14,8 +17,9 @@ class Enemigos: public QObject,public QGraphicsItem
 
 private:
     //Atributos
-    int pos_x,pos_y,radio,largo=162,ancho=125,velocidad=12;
-    QPixmap *mapa_sprite_en=new QPixmap(":/Enemigo/sprites/Enemigos/enemigo_derecha2.png");
+    int pos_x,pos_y,largo=64,ancho=64,velocidad=15;
+    QPixmap *mapa_sprite_en=new QPixmap("C:/Users/User/Pictures/copy.png");
+    QTimer *timer_mov=new QTimer();
 
 public:
     //METODOS
@@ -28,7 +32,8 @@ public:
     //GETTERS
     int get_pos_y();
     int get_pos_x();
-
+    int get_velocidad();
+    void persecucion_personaje(int personaje_x,int personaje_y);
     //DESTRUCTORES
     ~Enemigos();
 };

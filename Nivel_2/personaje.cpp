@@ -19,7 +19,7 @@ Personaje::Personaje(int x, int y)
 QRectF Personaje::boundingRect() const
 {
 
-    return QRectF(0,0,ancho,largo);
+    return QRectF(-ancho/2,-largo/2,ancho,largo);
 }
 
 
@@ -77,7 +77,7 @@ int Personaje::get_pos_y()
 
 Personaje::~Personaje()
 {
-    delete [] mapa_sprite;
+    delete mapa_sprite;
 }
 
 

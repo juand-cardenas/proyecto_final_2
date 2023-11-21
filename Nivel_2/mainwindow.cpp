@@ -17,56 +17,68 @@ MainWindow::MainWindow(QWidget *parent)
 
 
     l1= scene2->addLine(0,220,0,600);//Y
-   l2= scene2->addLine(0,220,700,220);//X
+    l2= scene2->addLine(0,260,700,260);//X
 
 
     p1=new Personaje (675,438);
     scene2->addItem(p1);
-    e=new Enemigos(0,438);
+    enemigo=new Enemigos(400,438);
+    scene2->addItem(enemigo);
 
-    scene2->addItem(e);
+    connect(timer_mov,SIGNAL(timeout()),this,SLOT(mov_enemigos()));
+    timer_mov->start(500);
+
+
 
 
 }
 
 void MainWindow::keyPressEvent(QKeyEvent *e)
 {
-    if(e->key()==Qt::Key_A && p1->get_pos_x()>=0){
+
+    if(e->key()==Qt::Key_A && p1->get_pos_x()>=63){
 
         p1->Mov_left();
     }
-    else if(e->key()==Qt::Key_D && p1->get_pos_x()<=673){
+    else if(e->key()==Qt::Key_D && p1->get_pos_x()<737){
         p1->Mov_rigth();
     }
-    else if(e->key()==Qt::Key_W && p1->get_pos_y()>=220){
+    else if(e->key()==Qt::Key_W && p1->get_pos_y()>=323){
 
         p1->Mov_up();
     }
-    else if(e->key()==Qt::Key_S && p1->get_pos_y()<=436 ){
+    else if(e->key()==Qt::Key_S && p1->get_pos_y()<=537 ){
 
         p1->Mov_down();
     }
     else if(e->key()==Qt::Key_Space){
 
-        bullet=new Proyectil_personaje(p1->get_pos_x(),p1->get_pos_y());
+
         QPixmap izquierda1(":/Morty/sprites/Morty/MortyIzquierda1.png");
-        QPixmap derecha1(":/Morty/sprites/Morty/MortyIzquierda1.png");
-        QPixmap frente1(":/Morty/sprites/Morty/MortyIzquierda1.png");
-        QPixmap detras1(":/Morty/sprites/Morty/MortyIzquierda1.png");
+        QPixmap derecha1(":/Morty/sprites/Morty/MortyDerecha1.png");
+        QPixmap frente1(":/Morty/sprites/Morty/MortyFrente1.png");
+        QPixmap detras1(":/Morty/sprites/Morty/MortyDetras1.png");
         if(*p1->get_mapa_sprite()==izquierda1 ){
             //DISPARA A LA IZQUIERDA
-           scene2->addItem(bullet);
+            bullet=new Proyectil_personaje(p1->get_pos_x(),p1->get_pos_y(),'l');
+            scene2->addItem(bullet);
+
         }
         else if(*p1->get_mapa_sprite()==derecha1){
              //DISPARA A LA DERECHA
+           bullet=new Proyectil_personaje(p1->get_pos_x(),p1->get_pos_y(),'r');
+            scene2->addItem(bullet);
         }
         else if(*p1->get_mapa_sprite()==frente1){
              //DISPARA  LA ABAJO
+           bullet=new Proyectil_personaje(p1->get_pos_x(),p1->get_pos_y(),'d');
+           scene2->addItem(bullet);
         }
         else if(*p1->get_mapa_sprite()==detras1){
              //DISPARA A ARRIBA
+           bullet=new Proyectil_personaje(p1->get_pos_x(),p1->get_pos_y(),'u');
+           scene2->addItem(bullet);
         }
-
 
 
     }
@@ -79,4 +91,11 @@ MainWindow::~MainWindow()
 {
     delete ui;
 }
+
+void MainWindow::mov_enemigos()
+{
+    enemigo->persecucion_personaje(p1->x(),p1->y());
+}
+
+
 

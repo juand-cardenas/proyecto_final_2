@@ -20,6 +20,7 @@ class MainWindow : public QMainWindow
 
 public:
     MainWindow(QWidget *parent = nullptr);
+    //METODOS
     void keyPressEvent(QKeyEvent *e);
     ~MainWindow();
 
@@ -29,8 +30,11 @@ private:
     QGraphicsLineItem *l1,*l2;
     QGraphicsPixmapItem *personaje;
     QPixmap pm;
-    Enemigos *e;
+    Enemigos *enemigo;
     Personaje *p1,*p2;
     Proyectil_personaje *bullet;
+    QTimer *timer_mov=new QTimer();
+private slots:
+    void mov_enemigos();
 };
 #endif // MAINWINDOW_H
