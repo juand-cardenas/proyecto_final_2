@@ -37,7 +37,7 @@ MOVE          = mv -f
 TAR           = tar -cf
 COMPRESS      = gzip -9f
 DISTNAME      = Nivel_11.0.0
-DISTDIR = /home/juandcardenas/informatica/proyecto\ final/build-Nivel_1-Desktop_Qt_6_5_3_GCC_64bit-Debug/.tmp/Nivel_11.0.0
+DISTDIR = /home/juandcardenas/informatica/proyecto\ final\ (1)_estado_bueno/proyecto\ final\ (1)/build-Nivel_1-Desktop_Qt_6_5_3_GCC_64bit-Debug/.tmp/Nivel_11.0.0
 LINK          = g++
 LFLAGS        = -Wl,-rpath,/qt/6.5.3/gcc_64/lib -Wl,-rpath-link,/qt/6.5.3/gcc_64/lib
 LIBS          = $(SUBLIBS) /qt/6.5.3/gcc_64/lib/libQt6Widgets.so /qt/6.5.3/gcc_64/lib/libQt6Gui.so /qt/6.5.3/gcc_64/lib/libQt6Core.so -lpthread -lGL   
@@ -1185,7 +1185,7 @@ moc_mainwindow.cpp: ../Nivel_1/mainwindow.h \
 		/qt/6.5.3/gcc_64/include/QtGui/QKeyEvent \
 		moc_predefs.h \
 		/qt/6.5.3/gcc_64/libexec/moc
-	/qt/6.5.3/gcc_64/libexec/moc $(DEFINES) --include '/home/juandcardenas/informatica/proyecto final/build-Nivel_1-Desktop_Qt_6_5_3_GCC_64bit-Debug/moc_predefs.h' -I/qt/6.5.3/gcc_64/mkspecs/linux-g++ -I'/home/juandcardenas/informatica/proyecto final/Nivel_1' -I/qt/6.5.3/gcc_64/include -I/qt/6.5.3/gcc_64/include/QtWidgets -I/qt/6.5.3/gcc_64/include/QtGui -I/qt/6.5.3/gcc_64/include/QtCore -I. -I/usr/include/c++/11 -I/usr/include/x86_64-linux-gnu/c++/11 -I/usr/include/c++/11/backward -I/usr/lib/gcc/x86_64-linux-gnu/11/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include ../Nivel_1/mainwindow.h -o moc_mainwindow.cpp
+	/qt/6.5.3/gcc_64/libexec/moc $(DEFINES) --include '/home/juandcardenas/informatica/proyecto final (1)_estado_bueno/proyecto final (1)/build-Nivel_1-Desktop_Qt_6_5_3_GCC_64bit-Debug/moc_predefs.h' -I/qt/6.5.3/gcc_64/mkspecs/linux-g++ -I'/home/juandcardenas/informatica/proyecto final (1)_estado_bueno/proyecto final (1)/Nivel_1' -I/qt/6.5.3/gcc_64/include -I/qt/6.5.3/gcc_64/include/QtWidgets -I/qt/6.5.3/gcc_64/include/QtGui -I/qt/6.5.3/gcc_64/include/QtCore -I. -I/usr/include/c++/11 -I/usr/include/x86_64-linux-gnu/c++/11 -I/usr/include/c++/11/backward -I/usr/lib/gcc/x86_64-linux-gnu/11/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include ../Nivel_1/mainwindow.h -o moc_mainwindow.cpp
 
 compiler_moc_objc_header_make_all:
 compiler_moc_objc_header_clean:
@@ -1619,7 +1619,8 @@ mainwindow.o: ../Nivel_1/mainwindow.cpp ../Nivel_1/mainwindow.h \
 		/qt/6.5.3/gcc_64/include/QtGui/qtextdocument.h \
 		/qt/6.5.3/gcc_64/include/QtWidgets/QStatusBar \
 		/qt/6.5.3/gcc_64/include/QtWidgets/qstatusbar.h \
-		/qt/6.5.3/gcc_64/include/QtWidgets/QWidget
+		/qt/6.5.3/gcc_64/include/QtWidgets/QWidget \
+		/qt/6.5.3/gcc_64/include/QtCore/QDebug
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o mainwindow.o ../Nivel_1/mainwindow.cpp
 
 moc_mainwindow.o: moc_mainwindow.cpp 

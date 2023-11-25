@@ -8,7 +8,9 @@
 #include <QMessageBox>
 #include <QGraphicsPixmapItem>
 #include <QKeyEvent>
-
+#include <cmath>
+using namespace std;
+#include <vector>
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
 QT_END_NAMESPACE
@@ -20,14 +22,17 @@ class MainWindow : public QMainWindow
 public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
-    QTimer *timer=new QTimer();
+    QTimer *timer_1=new QTimer();
     QTimer *timer_2=new QTimer();
     QTimer *timer_3=new QTimer();
     QTime timed;
     QMessageBox msgbox;
+
     void keyPressEvent(QKeyEvent *e);
 
 private slots:
+
+    void escena_1();
     void definir_final_de_juego();
     void actualizar_estado();
     void actualizar_cronometro();
@@ -36,15 +41,23 @@ private slots:
     void linea_limite();
     void obstaculo();
     void movimiento_obstaculo();
-
+    void actualizar_enemigos();
+    void colicion();
+    void inicio_juego();
+    void movimiento_2_obstaculo();
 
 private:
+
+    float angulo=0;
+    bool estado_escena;
+    int cant_enemi;
+    float vely;
+    float y;
     Ui::MainWindow *ui;
-    QGraphicsScene *nivel_1;
+    QGraphicsScene *nivel_1,*nivel_0;
     QGraphicsPixmapItem *avatar;
     QGraphicsLineItem *l1;
-    QGraphicsEllipseItem *c1;
-
+    vector<QGraphicsEllipseItem*>hola={};
 
 };
 #endif // MAINWINDOW_H
