@@ -68,7 +68,7 @@ void MainWindow :: inicio_juego(){
         int rando_posy= -65 +rand()% (153-3);
         num=rando_pos;
         num_2=rando_posy;
-        hola[i]->setPos(num,226);
+        hola[i]->setPos(num,num_2);
     }
     cant_enemi=15;
     vely=10.18;
@@ -209,7 +209,7 @@ void MainWindow :: obstaculo(){
         auto *c= new QGraphicsEllipseItem(0,0,16,16);
         c->setBrush(inter);
         c->setPen(line);
-        c->setPos(num,226);
+        c->setPos(num,num_2);
         nivel_1->addItem(c);
         hola.push_back(c);
 
@@ -229,7 +229,7 @@ void MainWindow :: movimiento_obstaculo(){
             int rando_posy= -75 +rand()% (153-3);
             num=rando_pos;
             num_2=rando_posy;
-            hola[i]->setPos(num,226);
+            hola[i]->setPos(num,num_2);
         }
     }
 }
@@ -252,15 +252,68 @@ void MainWindow ::colicion(){
 }
 
 void MainWindow :: movimiento_2_obstaculo(){
-    angulo=angulo*(3.141592653/180);
-    int h,posx;
-    h=10*sin(angulo);
-    posx=pow(10,2)-pow(h,2);
-    posx=sqrt(posx);
-    for(int i=0;i<=cant_enemi;i++){
-        hola[i]->setPos(hola[i]->pos().x()-posx,hola[i]->pos().y()-h);
+    int num,num_2;
+    srand(time(NULL));
+
+    if(angulo<1.570){
+
+        int h,posx;
+        h=radio*sin(angulo);
+        posx=pow(radio,2)-pow(h,2);
+        posx=sqrt(posx);
+        for(int i=0;i<=cant_enemi;i++){
+            hola[i]->setPos(hola[i]->pos().x()-posx,hola[i]->pos().y()-0.6*h);
+        }
     }
-    angulo+=25;
+    if(angulo>=1.570 and angulo <=3.14159){
+
+        int h,posx;
+        h=radio*sin(angulo);
+        posx=pow(radio,2)-pow(h,2);
+        posx=sqrt(posx);
+        for(int i=0;i<=cant_enemi;i++){
+            hola[i]->setPos(hola[i]->pos().x()-3*posx,hola[i]->pos().y()+3*h);
+        }
+
+    }
+
+    if(angulo>=3.14159 and angulo<=4.71238){
+
+        int h,posx;
+        h=radio*sin(angulo);
+        posx=pow(radio,2)-pow(h,2);
+        posx=sqrt(posx);
+        for(int i=0;i<=cant_enemi;i++){
+            hola[i]->setPos(hola[i]->pos().x()+3*posx,hola[i]->pos().y()-3*h);
+        }
+
+    }
+    if(angulo>=4.71238 and angulo<6.2831853){
+
+        int h,posx;
+        h=radio*sin(angulo);
+        posx=pow(radio,2)-pow(h,2);
+        posx=sqrt(posx);
+        for(int i=0;i<=cant_enemi;i++){
+            hola[i]->setPos(hola[i]->pos().x()+posx,hola[i]->pos().y()+0.6*h);
+            if(hola[i]->pos().y()>=650){
+                int rando_pos=-8 + rand()%(630-8);
+                int rando_posy= -75 +rand()% (153-3);
+                num=rando_pos;
+                num_2=rando_posy;
+                hola[i]->setPos(num,num_2);
+            }
+        }
+
+    }
+    if(angulo>6.2831853){
+        angulo=0;
+        cont_baja=0;
+    }
+
+    angulo+=0.5872664;
+
+
 }
 
 

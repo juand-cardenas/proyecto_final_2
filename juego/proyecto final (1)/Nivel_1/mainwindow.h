@@ -48,6 +48,8 @@ private slots:
 
 private:
 
+    int radio=15;
+    int cont_baja=0;
     float angulo=0;
     bool estado_escena;
     int cant_enemi;
