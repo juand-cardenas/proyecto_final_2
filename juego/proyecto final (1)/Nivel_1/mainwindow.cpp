@@ -262,7 +262,7 @@ void MainWindow :: movimiento_2_obstaculo(){
         posx=pow(radio,2)-pow(h,2);
         posx=sqrt(posx);
         for(int i=0;i<=cant_enemi;i++){
-            hola[i]->setPos(hola[i]->pos().x()-posx,hola[i]->pos().y()-0.6*h);
+            hola[i]->setPos(hola[i]->pos().x()-posx,hola[i]->pos().y()-4*h);
         }
     }
     if(angulo>=1.570 and angulo <=3.14159){
@@ -272,7 +272,7 @@ void MainWindow :: movimiento_2_obstaculo(){
         posx=pow(radio,2)-pow(h,2);
         posx=sqrt(posx);
         for(int i=0;i<=cant_enemi;i++){
-            hola[i]->setPos(hola[i]->pos().x()-3*posx,hola[i]->pos().y()+3*h);
+            hola[i]->setPos(hola[i]->pos().x()-5.5*posx,hola[i]->pos().y()+5.5*h);
         }
 
     }
@@ -284,7 +284,7 @@ void MainWindow :: movimiento_2_obstaculo(){
         posx=pow(radio,2)-pow(h,2);
         posx=sqrt(posx);
         for(int i=0;i<=cant_enemi;i++){
-            hola[i]->setPos(hola[i]->pos().x()+3*posx,hola[i]->pos().y()-3*h);
+            hola[i]->setPos(hola[i]->pos().x()+5.5*posx,hola[i]->pos().y()-5.5*h);
         }
 
     }
@@ -295,7 +295,7 @@ void MainWindow :: movimiento_2_obstaculo(){
         posx=pow(radio,2)-pow(h,2);
         posx=sqrt(posx);
         for(int i=0;i<=cant_enemi;i++){
-            hola[i]->setPos(hola[i]->pos().x()+posx,hola[i]->pos().y()+0.6*h);
+            hola[i]->setPos(hola[i]->pos().x()+posx,hola[i]->pos().y()+4*h);
             if(hola[i]->pos().y()>=650){
                 int rando_pos=-8 + rand()%(630-8);
                 int rando_posy= -75 +rand()% (153-3);
