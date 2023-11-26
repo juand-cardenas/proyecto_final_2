@@ -5,6 +5,7 @@
 #include<QGraphicsScene>
 #include<QGraphicsPixmapItem>
 #include <QKeyEvent>
+#include <QMap>
 #include <QPixmap>
 #include"personaje.h"
 #include"enemigos.h"
@@ -30,7 +31,8 @@ private:
     QGraphicsLineItem *l1,*l2;
     QGraphicsPixmapItem *personaje;
     QPixmap pm;
-    Enemigos *enemigo;
+    QMap<int,Enemigos *> Mapa_enemigos;
+    Enemigos *enemigo,*enemigo2;
     Personaje *p1,*p2;
     Proyectil_personaje *bullet;
     QTimer *timer_mov=new QTimer();

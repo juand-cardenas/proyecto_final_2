@@ -22,8 +22,25 @@ MainWindow::MainWindow(QWidget *parent)
 
     p1=new Personaje (675,438);
     scene2->addItem(p1);
-    enemigo=new Enemigos(400,438);
-    scene2->addItem(enemigo);
+    for(int i=0;i<4;i++){
+        if(i==0){
+            Mapa_enemigos[i]=new Enemigos(10,260);
+            scene2->addItem( Mapa_enemigos[i]);
+        }
+        else if(i==1){
+            Mapa_enemigos[i]=new Enemigos(780,260);
+            scene2->addItem( Mapa_enemigos[i]);
+        }
+        else if(i==2){
+            Mapa_enemigos[i]=new Enemigos(10,450);
+            scene2->addItem( Mapa_enemigos[i]);
+        }
+        else if(i==3){
+            Mapa_enemigos[i]=new Enemigos(780,450);
+            scene2->addItem( Mapa_enemigos[i]);
+        }
+    }
+
 
     connect(timer_mov,SIGNAL(timeout()),this,SLOT(mov_enemigos()));
     timer_mov->start(500);
@@ -94,7 +111,9 @@ MainWindow::~MainWindow()
 
 void MainWindow::mov_enemigos()
 {
-    enemigo->persecucion_personaje(p1->x(),p1->y());
+    for(int i=0;i<4;i++){
+        Mapa_enemigos[i]->persecucion_personaje(p1->x(),p1->y());
+    }
 }
 
 

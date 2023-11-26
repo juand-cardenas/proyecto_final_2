@@ -7,6 +7,7 @@
 #include<Qpainter>
 #include<QGraphicsPixmapItem>
 #include<QTimer>
+#include<math.h>
 
 class Proyectil_personaje:public QObject,public QGraphicsRectItem
 {
@@ -15,7 +16,7 @@ class Proyectil_personaje:public QObject,public QGraphicsRectItem
 private:
      Q_OBJECT
     //ATRIBUTOS
-    int pos_x,pos_y,ancho=40,largo=31, velocidad=12;
+    double pos_x,pos_y,ancho=40,largo=31, velocidad_x=35,velocidad_y=28,tiempo=1,y_final;
     QPixmap *mapa_proyec_per=new QPixmap(":/Enemigo/sprites/Enemigos/enemigo_derecha2.png");
     QTimer *timer=new QTimer();
 

@@ -14,7 +14,7 @@ Enemigos::Enemigos(int x, int y)
 
 QRectF Enemigos::boundingRect() const
 {
-    return QRectF(0,0,ancho,largo);
+    return QRectF(-ancho/2,-largo/2,ancho,largo);
 }
 
 void Enemigos::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget)
