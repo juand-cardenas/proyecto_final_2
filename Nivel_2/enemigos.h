@@ -18,7 +18,7 @@ class Enemigos: public QObject,public QGraphicsItem
 private:
     //Atributos
     int pos_x,pos_y,largo=64,ancho=64,velocidad=15;
-    QPixmap *mapa_sprite_en=new QPixmap("C:/Users/User/Pictures/copy.png");
+    QPixmap *mapa_sprite_en=new QPixmap(":/Enemigo/sprites/Enemigos/copy.png");
 
 
 public:
