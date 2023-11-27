@@ -25,6 +25,30 @@ void Enemigos::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, 
     painter->drawPixmap(boundingRect(),*mapa_sprite_en,mapa_sprite_en->rect());
 }
 
+void Enemigos::Move_up()
+{
+    pos_y-=4*velocidad;
+    setPos(pos_x,pos_y);
+}
+
+void Enemigos::Move_down()
+{
+    pos_y+=4*velocidad;
+    setPos(pos_x,pos_y);
+}
+
+void Enemigos::Move_left()
+{
+    pos_x-=4*velocidad;
+    setPos(pos_x,pos_y);
+}
+
+void Enemigos::Move_rigth()
+{
+    pos_x+=4*velocidad;
+    setPos(pos_x,pos_y);
+}
+
 int Enemigos::get_pos_y()
 {
     return pos_y;
@@ -42,22 +66,22 @@ int Enemigos::get_velocidad()
 
 void Enemigos::persecucion_personaje(int personaje_x, int personaje_y)
 {
-    int _x=x(),_y=y();
+
     int dy=y()-personaje_y,dx=x()-personaje_x;
     if(dx>0){
-        _x-=velocidad;
+        pos_x-=3*velocidad;
     }
     else if(dx<0){
-        _x+=velocidad;
+        pos_x+=0.5*velocidad;
     }
     if(dy>0){
-        _y-=velocidad;
+        pos_y-=3*velocidad;
     }
     else if(dy<0){
-        _y+=velocidad;
+        pos_y+=0.5*velocidad;
 
     }
-    setPos(_x,_y);
+    setPos(pos_x,pos_y);
 
 }
 

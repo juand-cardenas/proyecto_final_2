@@ -40,10 +40,13 @@ MainWindow::MainWindow(QWidget *parent)
             scene2->addItem( Mapa_enemigos[i]);
         }
     }
+    timer_mov=new QTimer();
+    timer_colision=new QTimer();
 
-
+    connect(timer_colision,SIGNAL(timeout()),this,SLOT(colision_enemigos()));
     connect(timer_mov,SIGNAL(timeout()),this,SLOT(mov_enemigos()));
-    timer_mov->start(500);
+    timer_mov->start(300);
+    timer_colision->start(300);
 
 
 
@@ -103,7 +106,6 @@ void MainWindow::keyPressEvent(QKeyEvent *e)
 }
 
 
-
 MainWindow::~MainWindow()
 {
     delete ui;
@@ -112,9 +114,48 @@ MainWindow::~MainWindow()
 void MainWindow::mov_enemigos()
 {
     for(int i=0;i<4;i++){
-        Mapa_enemigos[i]->persecucion_personaje(p1->x(),p1->y());
+        Mapa_enemigos[i]->persecucion_personaje(p1->get_pos_x() ,p1->get_pos_y());
+    }
+
+}
+void MainWindow::mov_colision_enemigo(int key)
+{
+    if(key==0){
+        Mapa_enemigos[key]->Move_left();
+        //Mapa_enemigos[key]->Move_up();
+    }
+    else if(key==1){
+        //Mapa_enemigos[key]->Move_rigth();
+        Mapa_enemigos[key]->Move_up();
+    }
+    else if(key==2){
+       // Mapa_enemigos[key]->Move_left();
+        Mapa_enemigos[key]->Move_down();
+    }
+    else if(key==3){
+        Mapa_enemigos[key]->Move_rigth();
+        //Mapa_enemigos[key]->Move_down();
     }
 }
+
+void MainWindow::colision_enemigos()
+{
+    if(!Mapa_enemigos.isEmpty()){
+        for(int i=0;i<4;i++){
+           for(int j=0;j<4;j++){
+               if(i!=j){
+                   if(Mapa_enemigos[i]->collidesWithItem(Mapa_enemigos[j])){
+                       qDebug()<<" Colision de "<<i<<" y"<<j;
+                       mov_colision_enemigo(i);
+                       mov_colision_enemigo(j);
+                   }
+               }
+           }
+        }
+    }
+}
+
+
 
 
 

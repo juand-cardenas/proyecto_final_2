@@ -1,6 +1,7 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
+#include <QDebug>
 #include <QMainWindow>
 #include<QGraphicsScene>
 #include<QGraphicsPixmapItem>
@@ -23,6 +24,9 @@ public:
     MainWindow(QWidget *parent = nullptr);
     //METODOS
     void keyPressEvent(QKeyEvent *e);
+    void mov_colision_enemigo(int key);
+
+
     ~MainWindow();
 
 private:
@@ -35,8 +39,10 @@ private:
     Enemigos *enemigo,*enemigo2;
     Personaje *p1,*p2;
     Proyectil_personaje *bullet;
-    QTimer *timer_mov=new QTimer();
+    QTimer *timer_mov,*timer_colision;
 private slots:
     void mov_enemigos();
+    void colision_enemigos();
+
 };
 #endif // MAINWINDOW_H

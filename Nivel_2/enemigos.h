@@ -19,7 +19,7 @@ private:
     //Atributos
     int pos_x,pos_y,largo=64,ancho=64,velocidad=15;
     QPixmap *mapa_sprite_en=new QPixmap("C:/Users/User/Pictures/copy.png");
-    QTimer *timer_mov=new QTimer();
+
 
 public:
     //METODOS
@@ -29,6 +29,11 @@ public:
     //DECLARACIONES DE FUNCIONES QUE ERAN ABSTRACTAS
     QRectF boundingRect()const;
     void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget = nullptr);
+    //MOVIMIENTOS
+    void Move_up();
+    void Move_down();
+    void Move_left();
+    void Move_rigth();
     //GETTERS
     int get_pos_y();
     int get_pos_x();
