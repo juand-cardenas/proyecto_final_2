@@ -29,7 +29,7 @@ MainWindow::MainWindow(QWidget *parent)
     obstaculo();
 
     connect(timer_1, SIGNAL(timeout()), this, SLOT(actualizar_estado()));
-    connect(timer_3, SIGNAL(timeout()), this, SLOT(movimiento_2_obstaculo()));
+    connect(timer_3, SIGNAL(timeout()), this, SLOT(tipo_movimiento_del_obstaculo()));
     connect(timer_2, SIGNAL(timeout()), this, SLOT(colicion()));
 
 
@@ -70,6 +70,7 @@ void MainWindow :: inicio_juego(){
         num_2=rando_posy;
         hola[i]->setPos(num,num_2);
     }
+    tipo_de_movimiento=1 +rand()% (3-1);
     cant_enemi=15;
     vely=10.18;
 
@@ -115,26 +116,38 @@ void MainWindow :: actualizar_enemigos(){
     if(timed.toString()=="00:03:18"){
         cant_enemi=15;
         vely=10.18;
+        movi_x=2.3;
+        movi_y=1.5;
     }
     if(timed.toString()=="00:03:00"){
         cant_enemi=20;
         vely=15.18;
+        movi_x=2.8;
+        movi_y=2;
     }
     if(timed.toString()=="00:02:30"){
         cant_enemi=30;
         vely=25.18;
+        movi_x=3.4;
+        movi_y=2.5;
     }
     if(timed.toString()=="00:02:00"){
         cant_enemi=40;
         vely=30.18;
+        movi_x=4;
+        movi_y=3;
     }
     if(timed.toString()=="00:01:30"){
         cant_enemi=50;
         vely=45.18;
+        movi_x=4.7;
+        movi_y=3.5;
     }
     if(timed.toString()=="00:00:30"){
         cant_enemi=60;
         vely=50.18;
+        movi_x=5.5;
+        movi_y=4;
     }
 }
 
@@ -262,7 +275,7 @@ void MainWindow :: movimiento_2_obstaculo(){
         posx=pow(radio,2)-pow(h,2);
         posx=sqrt(posx);
         for(int i=0;i<=cant_enemi;i++){
-            hola[i]->setPos(hola[i]->pos().x()-posx,hola[i]->pos().y()-4*h);
+            hola[i]->setPos(hola[i]->pos().x()-posx,hola[i]->pos().y()-movi_y*h);
         }
     }
     if(angulo>=1.570 and angulo <=3.14159){
@@ -272,7 +285,7 @@ void MainWindow :: movimiento_2_obstaculo(){
         posx=pow(radio,2)-pow(h,2);
         posx=sqrt(posx);
         for(int i=0;i<=cant_enemi;i++){
-            hola[i]->setPos(hola[i]->pos().x()-5.5*posx,hola[i]->pos().y()+5.5*h);
+            hola[i]->setPos(hola[i]->pos().x()-movi_x*posx,hola[i]->pos().y()+movi_x*h);
         }
 
     }
@@ -284,7 +297,7 @@ void MainWindow :: movimiento_2_obstaculo(){
         posx=pow(radio,2)-pow(h,2);
         posx=sqrt(posx);
         for(int i=0;i<=cant_enemi;i++){
-            hola[i]->setPos(hola[i]->pos().x()+5.5*posx,hola[i]->pos().y()-5.5*h);
+            hola[i]->setPos(hola[i]->pos().x()+movi_x*posx,hola[i]->pos().y()-movi_x*h);
         }
 
     }
@@ -295,7 +308,7 @@ void MainWindow :: movimiento_2_obstaculo(){
         posx=pow(radio,2)-pow(h,2);
         posx=sqrt(posx);
         for(int i=0;i<=cant_enemi;i++){
-            hola[i]->setPos(hola[i]->pos().x()+posx,hola[i]->pos().y()+4*h);
+            hola[i]->setPos(hola[i]->pos().x()+posx,hola[i]->pos().y()+movi_y*h);
             if(hola[i]->pos().y()>=650){
                 int rando_pos=-8 + rand()%(630-8);
                 int rando_posy= -75 +rand()% (153-3);
@@ -308,7 +321,7 @@ void MainWindow :: movimiento_2_obstaculo(){
     }
     if(angulo>6.2831853){
         angulo=0;
-        cont_baja=0;
+
     }
 
     angulo+=0.5872664;
@@ -316,6 +329,14 @@ void MainWindow :: movimiento_2_obstaculo(){
 
 }
 
+void MainWindow::tipo_movimiento_del_obstaculo(){
+    if(tipo_de_movimiento==2){
+        movimiento_2_obstaculo();
+    }
+    if(tipo_de_movimiento==1){
+        movimiento_obstaculo();
+    }
+}
 
 MainWindow::~MainWindow()
 {

@@ -45,11 +45,14 @@ private slots:
     void colicion();
     void inicio_juego();
     void movimiento_2_obstaculo();
+    void tipo_movimiento_del_obstaculo();
 
 private:
 
+    int tipo_de_movimiento;
     int radio=15;
-    int cont_baja=0;
+    int movi_y;
+    int movi_x;
     float angulo=0;
     bool estado_escena;
     int cant_enemi;
