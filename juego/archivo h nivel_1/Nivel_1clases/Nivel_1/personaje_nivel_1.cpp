@@ -48,5 +48,23 @@ void personaje_nivel1::movimiento_arriba()
 {
     mapa_personaje->load("espalda.png");
     pos_y=pos_y-10*velocidad;
+    pos_x=338;
+    setPos(pos_x,pos_y);
+}
+
+
+int personaje_nivel1::getPos_x() const
+{
+    return pos_x;
+}
+
+int personaje_nivel1::getPos_y() const
+{
+    return pos_y;
+}
+
+void personaje_nivel1 :: reinicio_posicion(int x, int y){
+    pos_x=x;
+    pos_y=y;
     setPos(pos_x,pos_y);
 }

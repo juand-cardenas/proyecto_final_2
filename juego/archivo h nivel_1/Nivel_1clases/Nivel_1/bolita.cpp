@@ -16,7 +16,7 @@ bolita::bolita(double x, double y)
 
 QRectF bolita::boundingRect() const
 {
-    return QRectF(-radio,-radio,2*radio,2*radio);
+    return QRectF(-radio,-radio,1.3*radio,1.3*radio);
 
 }
 

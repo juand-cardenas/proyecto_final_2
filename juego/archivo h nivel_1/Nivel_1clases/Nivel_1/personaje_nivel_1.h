@@ -3,6 +3,8 @@
 
 #include<QGraphicsItem>
 #include <QObject>
+#include <QTimer>
+#include <QTime>
 #include <QPainter>
 #include <QPixmap>
 
@@ -16,6 +18,7 @@ private:
 public:
     personaje_nivel1();
     personaje_nivel1(int x,int y);
+    QTime timed;
     ~personaje_nivel1();
 
     QRectF boundingRect()const;
@@ -24,8 +27,11 @@ public:
     void movimiento_derecha();
     void movimiento_izquierda();
     void movimiento_arriba();
+    void reinicio_posicion(int x, int y);
+    int getPos_x() const;
 
-
+    int getPos_y() const;
 };
+
 
 #endif // PERSONAJE_NIVEL1_H

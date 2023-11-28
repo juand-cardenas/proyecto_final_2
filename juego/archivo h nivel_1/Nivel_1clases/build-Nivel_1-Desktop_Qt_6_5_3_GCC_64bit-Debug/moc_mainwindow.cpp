@@ -38,20 +38,64 @@ namespace {
 #ifdef QT_MOC_HAS_STRINGDATA
 struct qt_meta_stringdata_CLASSMainWindowENDCLASS_t {};
 static constexpr auto qt_meta_stringdata_CLASSMainWindowENDCLASS = QtMocHelpers::stringData(
-    "MainWindow"
+    "MainWindow",
+    "escena1",
+    "",
+    "crear_grupo_de_bolitas",
+    "linea_limite",
+    "inicio_juego",
+    "actualizar_cronometro",
+    "actualizar_estado",
+    "movimiento_bolitas",
+    "actualizar_enemigos",
+    "colicion",
+    "definir_final_de_juego"
 );
 #else  // !QT_MOC_HAS_STRING_DATA
 struct qt_meta_stringdata_CLASSMainWindowENDCLASS_t {
-    uint offsetsAndSizes[2];
+    uint offsetsAndSizes[24];
     char stringdata0[11];
+    char stringdata1[8];
+    char stringdata2[1];
+    char stringdata3[23];
+    char stringdata4[13];
+    char stringdata5[13];
+    char stringdata6[22];
+    char stringdata7[18];
+    char stringdata8[19];
+    char stringdata9[20];
+    char stringdata10[9];
+    char stringdata11[23];
 };
 #define QT_MOC_LITERAL(ofs, len) \
     uint(sizeof(qt_meta_stringdata_CLASSMainWindowENDCLASS_t::offsetsAndSizes) + ofs), len 
 Q_CONSTINIT static const qt_meta_stringdata_CLASSMainWindowENDCLASS_t qt_meta_stringdata_CLASSMainWindowENDCLASS = {
     {
-        QT_MOC_LITERAL(0, 10)   // "MainWindow"
+        QT_MOC_LITERAL(0, 10),  // "MainWindow"
+        QT_MOC_LITERAL(11, 7),  // "escena1"
+        QT_MOC_LITERAL(19, 0),  // ""
+        QT_MOC_LITERAL(20, 22),  // "crear_grupo_de_bolitas"
+        QT_MOC_LITERAL(43, 12),  // "linea_limite"
+        QT_MOC_LITERAL(56, 12),  // "inicio_juego"
+        QT_MOC_LITERAL(69, 21),  // "actualizar_cronometro"
+        QT_MOC_LITERAL(91, 17),  // "actualizar_estado"
+        QT_MOC_LITERAL(109, 18),  // "movimiento_bolitas"
+        QT_MOC_LITERAL(128, 19),  // "actualizar_enemigos"
+        QT_MOC_LITERAL(148, 8),  // "colicion"
+        QT_MOC_LITERAL(157, 22)   // "definir_final_de_juego"
     },
-    "MainWindow"
+    "MainWindow",
+    "escena1",
+    "",
+    "crear_grupo_de_bolitas",
+    "linea_limite",
+    "inicio_juego",
+    "actualizar_cronometro",
+    "actualizar_estado",
+    "movimiento_bolitas",
+    "actualizar_enemigos",
+    "colicion",
+    "definir_final_de_juego"
 };
 #undef QT_MOC_LITERAL
 #endif // !QT_MOC_HAS_STRING_DATA
@@ -63,12 +107,36 @@ Q_CONSTINIT static const uint qt_meta_data_CLASSMainWindowENDCLASS[] = {
       11,       // revision
        0,       // classname
        0,    0, // classinfo
-       0,    0, // methods
+      10,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
        0,       // flags
        0,       // signalCount
+
+ // slots: name, argc, parameters, tag, flags, initial metatype offsets
+       1,    0,   74,    2, 0x08,    1 /* Private */,
+       3,    0,   75,    2, 0x08,    2 /* Private */,
+       4,    0,   76,    2, 0x08,    3 /* Private */,
+       5,    0,   77,    2, 0x08,    4 /* Private */,
+       6,    0,   78,    2, 0x08,    5 /* Private */,
+       7,    0,   79,    2, 0x08,    6 /* Private */,
+       8,    0,   80,    2, 0x08,    7 /* Private */,
+       9,    0,   81,    2, 0x08,    8 /* Private */,
+      10,    0,   82,    2, 0x08,    9 /* Private */,
+      11,    0,   83,    2, 0x08,   10 /* Private */,
+
+ // slots: parameters
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
 
        0        // eod
 };
@@ -81,16 +149,50 @@ Q_CONSTINIT const QMetaObject MainWindow::staticMetaObject = { {
     nullptr,
     qt_incomplete_metaTypeArray<qt_meta_stringdata_CLASSMainWindowENDCLASS_t,
         // Q_OBJECT / Q_GADGET
-        QtPrivate::TypeAndForceComplete<MainWindow, std::true_type>
+        QtPrivate::TypeAndForceComplete<MainWindow, std::true_type>,
+        // method 'escena1'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        // method 'crear_grupo_de_bolitas'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        // method 'linea_limite'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        // method 'inicio_juego'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        // method 'actualizar_cronometro'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        // method 'actualizar_estado'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        // method 'movimiento_bolitas'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        // method 'actualizar_enemigos'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        // method 'colicion'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        // method 'definir_final_de_juego'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>
     >,
     nullptr
 } };
 
 void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
 {
-    (void)_o;
-    (void)_id;
-    (void)_c;
+    if (_c == QMetaObject::InvokeMetaMethod) {
+        auto *_t = static_cast<MainWindow *>(_o);
+        (void)_t;
+        switch (_id) {
+        case 0: _t->escena1(); break;
+        case 1: _t->crear_grupo_de_bolitas(); break;
+        case 2: _t->linea_limite(); break;
+        case 3: _t->inicio_juego(); break;
+        case 4: _t->actualizar_cronometro(); break;
+        case 5: _t->actualizar_estado(); break;
+        case 6: _t->movimiento_bolitas(); break;
+        case 7: _t->actualizar_enemigos(); break;
+        case 8: _t->colicion(); break;
+        case 9: _t->definir_final_de_juego(); break;
+        default: ;
+        }
+    }
     (void)_a;
 }
 
@@ -110,6 +212,17 @@ void *MainWindow::qt_metacast(const char *_clname)
 int MainWindow::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
 {
     _id = QMainWindow::qt_metacall(_c, _id, _a);
+    if (_id < 0)
+        return _id;
+    if (_c == QMetaObject::InvokeMetaMethod) {
+        if (_id < 10)
+            qt_static_metacall(this, _c, _id, _a);
+        _id -= 10;
+    } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
+        if (_id < 10)
+            *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
+        _id -= 10;
+    }
     return _id;
 }
 QT_WARNING_POP

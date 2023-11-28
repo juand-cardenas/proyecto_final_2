@@ -24,6 +24,19 @@
      </rect>
     </property>
    </widget>
+   <widget class="QLabel" name="Cronometro">
+    <property name="geometry">
+     <rect>
+      <x>636</x>
+      <y>30</y>
+      <width>111</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>cronometro</string>
+    </property>
+   </widget>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
