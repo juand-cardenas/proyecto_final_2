@@ -27,4 +27,10 @@
         <file>sprites/Enemigos/enemigo_derecha1.png</file>
         <file>sprites/Enemigos/copy.png</file>
     </qresource>
+    <qresource prefix="/Vida">
+        <file>sprites/Vida/heart pixel art 32x32.png</file>
+    </qresource>
+    <qresource prefix="/Proyectil">
+        <file>sprites/Proyectil/Bola_de_fuego.png</file>
+    </qresource>
 </RCC>

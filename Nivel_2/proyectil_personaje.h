@@ -21,7 +21,7 @@ private:
     //ATRIBUTOS
     double pos_x,pos_y,ancho=32,largo=32, velocidad_x=35,velocidad_y=28,tiempo=1,y_final;
     char direccion_disparo;
-    QPixmap *mapa_proyec_per=new QPixmap("C:/Users/User/Pictures/jWrNgV.png");
+    QPixmap *mapa_proyec_per=new QPixmap(":/Proyectil/sprites/Proyectil/Bola_de_fuego.png");
     QTimer *timer=new QTimer();
 
 

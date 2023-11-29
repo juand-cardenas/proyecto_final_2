@@ -43,7 +43,7 @@ private:
 
     QVector<Proyectil_personaje*> vector_proyectiles;
     QVector<QGraphicsPixmapItem*> corazones;
-    QPixmap *cora=new QPixmap("C:/Users/User/Pictures/heart pixel art/heart pixel art 32x32.png");
+    QPixmap *cora=new QPixmap(":/Vida/sprites/Vida/heart pixel art 32x32.png");
     QMessageBox *msgbox=new QMessageBox();
 
     Personaje *p1,*p2;
