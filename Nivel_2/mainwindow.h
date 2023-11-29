@@ -31,6 +31,7 @@ public:
     void mover_enemigo_colisionado(int key);
     void mover_enemigo_colisionado_personaje(int key);
     void Nivel_2_terminado(bool win_lose);
+    void Inicio_Nivel_2();
 
 
     ~MainWindow();

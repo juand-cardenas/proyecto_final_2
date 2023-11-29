@@ -9,91 +9,7 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-    scene2=new QGraphicsScene();
-    scene2->setSceneRect(0,0,798,598);
-    ui->graphicsView->setScene(scene2);
-
-    QImage imagenFondo(":/Background/sprites/background/prueba.png");
-    QBrush brochaFondo(imagenFondo);
-    ui->graphicsView->setBackgroundBrush(brochaFondo);
-    corazones.insert(0,new QGraphicsPixmapItem(*cora));
-    corazones.insert(1,new QGraphicsPixmapItem(*cora));
-    corazones.insert(2,new QGraphicsPixmapItem(*cora));
-
-    //inicializacion proyectiles
-    for(int i=0;i<4;i++){
-        if(i==0){
-           vector_proyectiles.insert(i,new Proyectil_personaje(0,0,'l'));
-        }
-        else if(i==1){
-           vector_proyectiles.insert(i,new Proyectil_personaje(0,0,'r'));
-        }
-        else if(i==2){
-           vector_proyectiles.insert(i,new Proyectil_personaje(0,0,'d'));
-        }
-        else if(i==3){
-           vector_proyectiles.insert(i,new Proyectil_personaje(0,0,'u'));
-        }
-
-    }
-
-
-    for(int i=0;i<3;i++){
-
-        scene2->addItem(corazones[i]);
-        corazones[i]->setPos(700+i*32,20);
-    }
-
-
-    l1= scene2->addLine(0,220,0,600);//Y
-    l2= scene2->addLine(0,260,700,260);//X
-
-
-
-    p1=new Personaje (400,550);
-    scene2->addItem(p1);
-    for(int i=0;i<4;i++){
-        if(i==0){
-            Mapa_enemigos[i]=new Enemigos(10,260);
-            scene2->addItem( Mapa_enemigos[i]);
-        }
-        else if(i==1){
-            Mapa_enemigos[i]=new Enemigos(780,260);
-            scene2->addItem( Mapa_enemigos[i]);
-        }
-        else if(i==2){
-            Mapa_enemigos[i]=new Enemigos(10,500);
-            scene2->addItem( Mapa_enemigos[i]);
-        }
-        else if(i==3){
-            Mapa_enemigos[i]=new Enemigos(780,500);
-            scene2->addItem( Mapa_enemigos[i]);
-        }
-    }
-
-    timer_cronometro=new QTimer();
-    timer_mov_colisiones_aparicion=new QTimer();
-
-
-
-    connect(timer_cronometro,SIGNAL(timeout()),this,SLOT(fin_dejuego()));
-    connect(timer_mov_colisiones_aparicion,SIGNAL(timeout()),this,SLOT(colision_entre_enemigos()));
-    connect(timer_mov_colisiones_aparicion,SIGNAL(timeout()),this,SLOT(mov_enemigos()));
-    connect(timer_mov_colisiones_aparicion,SIGNAL(timeout()),this,SLOT(colision_enemigo_personaje()));
-    connect(timer_mov_colisiones_aparicion,SIGNAL(timeout()),this,SLOT(colision_enemigo_proyectil()));
-    connect(timer_mov_colisiones_aparicion,SIGNAL(timeout()),this,SLOT(aparicion_periodica_enemigos()));
-
-
-
-    timer_mov_colisiones_aparicion->start(100);
-
-
-
-    cuenta_regresiva.setHMS(0,2,0);
-    ui->Cronometro->setText(cuenta_regresiva.toString("m:ss"));
-    timer_cronometro->start(1000);
-
-
+    Inicio_Nivel_2();
 
 }
 
@@ -218,6 +134,93 @@ void MainWindow::Nivel_2_terminado(bool win_lose)
         QCoreApplication::quit();
     }
 
+}
+
+void MainWindow::Inicio_Nivel_2()
+{
+    scene2=new QGraphicsScene();
+    scene2->setSceneRect(0,0,798,598);
+    ui->graphicsView->setScene(scene2);
+
+    QImage imagenFondo(":/Background/sprites/background/prueba.png");
+    QBrush brochaFondo(imagenFondo);
+    ui->graphicsView->setBackgroundBrush(brochaFondo);
+    corazones.insert(0,new QGraphicsPixmapItem(*cora));
+    corazones.insert(1,new QGraphicsPixmapItem(*cora));
+    corazones.insert(2,new QGraphicsPixmapItem(*cora));
+
+    //inicializacion proyectiles
+    for(int i=0;i<4;i++){
+        if(i==0){
+           vector_proyectiles.insert(i,new Proyectil_personaje(0,0,'l'));
+        }
+        else if(i==1){
+           vector_proyectiles.insert(i,new Proyectil_personaje(0,0,'r'));
+        }
+        else if(i==2){
+           vector_proyectiles.insert(i,new Proyectil_personaje(0,0,'d'));
+        }
+        else if(i==3){
+           vector_proyectiles.insert(i,new Proyectil_personaje(0,0,'u'));
+        }
+
+    }
+
+
+    for(int i=0;i<3;i++){
+
+        scene2->addItem(corazones[i]);
+        corazones[i]->setPos(700+i*32,20);
+    }
+
+
+    l1= scene2->addLine(0,220,0,600);//Y
+    l2= scene2->addLine(0,260,700,260);//X
+
+
+
+    p1=new Personaje (400,550);
+    scene2->addItem(p1);
+    for(int i=0;i<4;i++){
+        if(i==0){
+           Mapa_enemigos[i]=new Enemigos(10,260);
+           scene2->addItem( Mapa_enemigos[i]);
+        }
+        else if(i==1){
+           Mapa_enemigos[i]=new Enemigos(780,260);
+           scene2->addItem( Mapa_enemigos[i]);
+        }
+        else if(i==2){
+           Mapa_enemigos[i]=new Enemigos(10,500);
+           scene2->addItem( Mapa_enemigos[i]);
+        }
+        else if(i==3){
+           Mapa_enemigos[i]=new Enemigos(780,500);
+           scene2->addItem( Mapa_enemigos[i]);
+        }
+    }
+
+    timer_cronometro=new QTimer();
+    timer_mov_colisiones_aparicion=new QTimer();
+
+
+
+    connect(timer_cronometro,SIGNAL(timeout()),this,SLOT(fin_dejuego()));
+    connect(timer_mov_colisiones_aparicion,SIGNAL(timeout()),this,SLOT(colision_entre_enemigos()));
+    connect(timer_mov_colisiones_aparicion,SIGNAL(timeout()),this,SLOT(mov_enemigos()));
+    connect(timer_mov_colisiones_aparicion,SIGNAL(timeout()),this,SLOT(colision_enemigo_personaje()));
+    connect(timer_mov_colisiones_aparicion,SIGNAL(timeout()),this,SLOT(colision_enemigo_proyectil()));
+    connect(timer_mov_colisiones_aparicion,SIGNAL(timeout()),this,SLOT(aparicion_periodica_enemigos()));
+
+
+
+    timer_mov_colisiones_aparicion->start(100);
+
+
+
+    cuenta_regresiva.setHMS(0,1,30);
+    ui->Cronometro->setText(cuenta_regresiva.toString("m:ss"));
+    timer_cronometro->start(1000);
 }
 MainWindow::~MainWindow()
 {
