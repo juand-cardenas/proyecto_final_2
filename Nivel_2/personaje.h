@@ -16,7 +16,7 @@ class Personaje:public QObject, public QGraphicsItem
     Q_INTERFACES(QGraphicsItem)
 private:
     //atributos:
-    int pos_x,pos_y,largo=125,ancho=125,velocidad=20,vida=100;
+    int pos_x,pos_y,largo=125,ancho=125,velocidad=40,vida=3;
     QPixmap *mapa_sprite=new QPixmap(":/Morty/sprites/Morty/MortyDerecha1.png");
 
 public:
@@ -28,6 +28,9 @@ public:
     //DECLARACION DE METODOS QUE ERAN ABSTRACTOS
     QRectF boundingRect()const;
     void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget = nullptr);
+    //SETTERS
+    void setVida(int newVida);
+
     //MOVIMIENTOS;
     void Mov_up();
     void Mov_down();
@@ -37,8 +40,12 @@ public:
     QPixmap *get_mapa_sprite();
     int get_pos_x();
     int get_pos_y();
+    int getVida();
+
+
     //DSETRUCTOR
     ~Personaje();
+
 
 };
 

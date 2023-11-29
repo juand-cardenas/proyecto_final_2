@@ -34,6 +34,8 @@ public:
     void Move_down();
     void Move_left();
     void Move_rigth();
+    //SETTERS
+    void set_posiciones(int x,int y);
     //GETTERS
     int get_pos_y();
     int get_pos_x();

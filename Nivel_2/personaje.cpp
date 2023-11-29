@@ -1,5 +1,7 @@
 #include "personaje.h"
 
+
+
 Personaje::Personaje()
 {
 
@@ -29,6 +31,10 @@ void Personaje::paint(QPainter *painter, const QStyleOptionGraphicsItem *option,
 
 
     painter->drawPixmap(boundingRect(),*mapa_sprite,mapa_sprite->rect());
+}
+void Personaje::setVida(int newVida)
+{
+    vida = newVida;
 }
 //MOVIMIENTOS
 void Personaje::Mov_up()
@@ -73,6 +79,12 @@ int Personaje::get_pos_x()
 int Personaje::get_pos_y()
 {
     return pos_y;
+}
+
+
+int Personaje::getVida()
+{
+    return vida;
 }
 
 Personaje::~Personaje()
