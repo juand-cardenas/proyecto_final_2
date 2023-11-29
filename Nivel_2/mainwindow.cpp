@@ -224,7 +224,32 @@ void MainWindow::Inicio_Nivel_2()
 }
 MainWindow::~MainWindow()
 {
+
+    delete timer_cronometro;
+    delete timer_mov_colisiones_aparicion;
+
+    for(int i=0;i<Mapa_enemigos.size();i++){
+        delete Mapa_enemigos[i];
+    }
+
+    /*for(int i=0;i<3;i++){
+        if(scene2->items().contains(corazones[i])){
+           scene2->removeItem(corazones[i]);
+        }
+
+        delete corazones[i];
+    }*/
+    delete cora;
+    for(int i=0;i<vector_proyectiles.size();i++){
+        scene2->removeItem(vector_proyectiles[i]);
+        delete vector_proyectiles[i];
+    }
+    delete p1;
+    delete scene2;
     delete ui;
+
+
+
 }
 
 

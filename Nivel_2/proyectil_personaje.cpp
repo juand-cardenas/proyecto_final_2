@@ -72,14 +72,25 @@ void Proyectil_personaje::set_posiciones(double x, double y)
 
 void Proyectil_personaje::Mov_up()
 {
-    pos_y-=velocidad_x;
-    setPos(pos_x,pos_y);
+    if(pos_y>-ancho/2){
+        pos_y-=velocidad_x;
+        setPos(pos_x,pos_y);
+
+    }
+    else{
+        timer->stop();
+    }
 }
 
 void Proyectil_personaje::Mov_down()
 {
-    pos_y+=velocidad_x;
-    setPos(pos_x,pos_y);
+    if(pos_y<600+ancho/2){
+        pos_y+=velocidad_x;
+        setPos(pos_x,pos_y);
+    }
+    else{
+        timer->stop();
+    }
 }
 
 void Proyectil_personaje::Mov_left()
