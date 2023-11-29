@@ -142,6 +142,8 @@ release/qrc_sprites.cpp: ../Nivel_2/sprites.qrc \
 		../Nivel_2/sprites/Morty/MortyDetras3.png \
 		../Nivel_2/sprites/Morty/MortyDerecha4.png \
 		../Nivel_2/sprites/Morty/MortyIzquierda1.png \
+		../Nivel_2/sprites/Proyectil/Bola_de_fuego.png \
+		../Nivel_2/sprites/Vida/heart\ pixel\ art\ 32x32.png \
 		../Nivel_2/sprites/background/prueba.png
 	C:\Qt\5.15.2\mingw81_64\bin\rcc.exe -name sprites ..\Nivel_2\sprites.qrc -o release\qrc_sprites.cpp
 
@@ -1065,7 +1067,30 @@ release/mainwindow.o: ../Nivel_2/mainwindow.cpp ../Nivel_2/mainwindow.h \
 		C:/Qt/5.15.2/mingw81_64/include/QtCore/qbasictimer.h \
 		../Nivel_2/proyectil_personaje.h \
 		C:/Qt/5.15.2/mingw81_64/include/QtCore/QList \
-		ui_mainwindow.h
+		ui_mainwindow.h \
+		C:/Qt/5.15.2/mingw81_64/include/QtCore/QVariant \
+		C:/Qt/5.15.2/mingw81_64/include/QtWidgets/QApplication \
+		C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qapplication.h \
+		C:/Qt/5.15.2/mingw81_64/include/QtCore/qcoreapplication.h \
+		C:/Qt/5.15.2/mingw81_64/include/QtCore/qeventloop.h \
+		C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qdesktopwidget.h \
+		C:/Qt/5.15.2/mingw81_64/include/QtGui/qguiapplication.h \
+		C:/Qt/5.15.2/mingw81_64/include/QtGui/qinputmethod.h \
+		C:/Qt/5.15.2/mingw81_64/include/QtWidgets/QGraphicsView \
+		C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qgraphicsview.h \
+		C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qscrollarea.h \
+		C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qabstractscrollarea.h \
+		C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qframe.h \
+		C:/Qt/5.15.2/mingw81_64/include/QtWidgets/QLabel \
+		C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qlabel.h \
+		C:/Qt/5.15.2/mingw81_64/include/QtWidgets/QMenuBar \
+		C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qmenubar.h \
+		C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qmenu.h \
+		C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qaction.h \
+		C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qactiongroup.h \
+		C:/Qt/5.15.2/mingw81_64/include/QtWidgets/QStatusBar \
+		C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qstatusbar.h \
+		C:/Qt/5.15.2/mingw81_64/include/QtWidgets/QWidget
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\mainwindow.o ..\Nivel_2\mainwindow.cpp
 
 release/personaje.o: ../Nivel_2/personaje.cpp ../Nivel_2/personaje.h \
