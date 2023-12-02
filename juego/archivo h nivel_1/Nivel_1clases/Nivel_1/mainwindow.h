@@ -50,6 +50,7 @@ private slots:
     void colicion();
     void definir_final_de_juego();
     void movimiento_bolitas_2();
+    void tipo_movimiento_del_obstaculo();
 
 
 private:
@@ -64,6 +65,7 @@ private:
     QGraphicsLineItem *l1;
     vector<bolita *>bolitas={};// crear vector de bolitas
     bool estado_escena;
+    int tipo_de_movimiento;
     int cant_enemigos;
 };
 #endif // MAINWINDOW_H
