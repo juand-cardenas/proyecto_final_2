@@ -1,7 +1,5 @@
 #include "bolita.h"
 
-
-
 bolita::bolita()
 {
 
@@ -85,5 +83,17 @@ double bolita::getVel_y()
     return vel_y;
 }
 
+void bolita::setAngulo(double newAngulo)
+{
+    angulo = newAngulo;
+}
 
+double bolita::getAngulo() const
+{
+    return angulo;
+}
 
+double bolita::getRadio() const
+{
+    return radio;
+}

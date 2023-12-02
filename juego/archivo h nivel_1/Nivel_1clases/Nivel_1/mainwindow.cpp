@@ -19,7 +19,7 @@ MainWindow::MainWindow(QWidget *parent)
     //Timers
     connect(timer_1, SIGNAL(timeout()), this, SLOT(actualizar_estado()));
     connect(timer_2, SIGNAL(timeout()), this, SLOT(colicion()));
-    connect(timer_3, SIGNAL(timeout()), this, SLOT(movimiento_bolitas()));
+    connect(timer_3, SIGNAL(timeout()), this, SLOT(movimiento_bolitas_2()));
 
 }
 
@@ -241,62 +241,76 @@ void MainWindow :: movimiento_bolitas_2(){
     int num,num_2;
     srand(time(NULL));
 
-    if(angulo<1.570){
+    if(auxiliar.getAngulo()<1.570){
 
         int h,posx;
-        h=radio*sin(angulo);
-        posx=pow(radio,2)-pow(h,2);
+        h=auxiliar.getRadio()*sin(auxiliar.getAngulo());
+        posx=pow(auxiliar.getRadio(),2)-pow(h,2);
         posx=sqrt(posx);
-        for(int i=0;i<=cant_enemi;i++){
-            hola[i]->setPos(hola[i]->pos().x()-posx,hola[i]->pos().y()-movi_y*h);
+        for(int i=0;i<=cant_enemigos;i++){
+            //hola[i]->setPos(hola[i]->pos().x()-posx,hola[i]->pos().y()-movi_y*h);
+            bolitas[i]->setPos_y(bolitas[i]->getPos_y()-auxiliar.getMovi_y()*h);
+            bolitas[i]->setPos_x(bolitas[i]->getPos_x()-auxiliar.getMovi_x()*posx);
+            bolitas[i]->colocar_posiciones(bolitas[i]->getPos_x(),bolitas[i]->getPos_y());
         }
     }
-    if(angulo>=1.570 and angulo <=3.14159){
+    if(auxiliar.getAngulo()>=1.570 and auxiliar.getAngulo() <=3.14159){
 
         int h,posx;
-        h=radio*sin(angulo);
-        posx=pow(radio,2)-pow(h,2);
+        h=auxiliar.getRadio()*sin(auxiliar.getAngulo());
+        posx=pow(auxiliar.getRadio(),2)-pow(h,2);
         posx=sqrt(posx);
-        for(int i=0;i<=cant_enemi;i++){
-            hola[i]->setPos(hola[i]->pos().x()-movi_x*posx,hola[i]->pos().y()+movi_x*h);
-        }
-
-    }
-
-    if(angulo>=3.14159 and angulo<=4.71238){
-
-        int h,posx;
-        h=radio*sin(angulo);
-        posx=pow(radio,2)-pow(h,2);
-        posx=sqrt(posx);
-        for(int i=0;i<=cant_enemi;i++){
-            hola[i]->setPos(hola[i]->pos().x()+movi_x*posx,hola[i]->pos().y()-movi_x*h);
+        for(int i=0;i<=cant_enemigos;i++){
+            //hola[i]->setPos(hola[i]->pos().x()-movi_x*posx,hola[i]->pos().y()+movi_x*h);
+            bolitas[i]->setPos_y(bolitas[i]->getPos_y()+auxiliar.getMovi_y()*h);
+            bolitas[i]->setPos_x(bolitas[i]->getPos_x()-auxiliar.getMovi_x()*posx);
+            bolitas[i]->colocar_posiciones(bolitas[i]->getPos_x(),bolitas[i]->getPos_y());
         }
 
     }
-    if(angulo>=4.71238 and angulo<6.2831853){
+
+    if(auxiliar.getAngulo()>=3.14159 and auxiliar.getAngulo()<=4.71238){
 
         int h,posx;
-        h=radio*sin(angulo);
-        posx=pow(radio,2)-pow(h,2);
+        h=auxiliar.getRadio()*sin(auxiliar.getAngulo());
+        posx=pow(auxiliar.getRadio(),2)-pow(h,2);
         posx=sqrt(posx);
-        for(int i=0;i<=cant_enemi;i++){
-            hola[i]->setPos(hola[i]->pos().x()+posx,hola[i]->pos().y()+movi_y*h);
-            if(hola[i]->pos().y()>=650){
+        for(int i=0;i<=cant_enemigos;i++){
+            //hola[i]->setPos(hola[i]->pos().x()+movi_x*posx,hola[i]->pos().y()-movi_x*h);
+            bolitas[i]->setPos_y(bolitas[i]->getPos_y()+auxiliar.getMovi_y()*h);
+            bolitas[i]->setPos_x(bolitas[i]->getPos_x()+auxiliar.getMovi_x()*posx);
+            bolitas[i]->colocar_posiciones(bolitas[i]->getPos_x(),bolitas[i]->getPos_y());
+        }
+
+    }
+    if(auxiliar.getAngulo()>=4.71238 and auxiliar.getAngulo()<6.2831853){
+
+        int h,posx;
+        h=auxiliar.getRadio()*sin(auxiliar.getAngulo());
+        posx=pow(auxiliar.getRadio(),2)-pow(h,2);
+        posx=sqrt(posx);
+        for(int i=0;i<=cant_enemigos;i++){
+            //hola[i]->setPos(hola[i]->pos().x()+posx,hola[i]->pos().y()+movi_y*h);
+            bolitas[i]->setPos_y(bolitas[i]->getPos_y()+auxiliar.getMovi_y()*h);
+            bolitas[i]->setPos_x(bolitas[i]->getPos_x()+auxiliar.getMovi_x()*posx);
+            bolitas[i]->colocar_posiciones(bolitas[i]->getPos_x(),bolitas[i]->getPos_y());
+            if(bolitas[i]->getPos_y()>=650){
                 int rando_pos=-8 + rand()%(630-8);
                 int rando_posy= -75 +rand()% (153-3);
                 num=rando_pos;
                 num_2=rando_posy;
-                hola[i]->setPos(num,num_2);
+                //hola[i]->setPos(num,num_2);
+                bolitas[i]->colocar_posiciones(num,num_2);
             }
         }
 
     }
-    if(angulo>6.2831853){
-        angulo=0;
+    if(auxiliar.getAngulo()>6.2831853){
+        auxiliar.setAngulo(0);
 
     }
 
-    angulo+=0.5872664;
+    //angulo+=0.5872664;
+    auxiliar.setAngulo(auxiliar.getAngulo()+0.5872664);
 
 }

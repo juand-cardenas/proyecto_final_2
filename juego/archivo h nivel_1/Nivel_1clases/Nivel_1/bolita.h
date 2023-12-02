@@ -13,7 +13,7 @@ class bolita:public QObject,public QGraphicsItem
     Q_INTERFACES(QGraphicsItem)
 private:
     //ATRIBUTOS
-    double pos_x,pos_y,radio=15,movi_y,movi_x,vel_y;
+    double pos_x,pos_y,radio=15,movi_y,movi_x,vel_y,angulo;
 public:
     bolita();
     bolita(double x,double y);
@@ -34,6 +34,9 @@ public:
     double getMovi_y();
     double getMovi_x();
     double getVel_y() ;
+    void setAngulo(double newAngulo);
+    double getAngulo() const;
+    double getRadio() const;
 };
 
 #endif // BOLITA_H
