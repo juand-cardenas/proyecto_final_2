@@ -14,7 +14,7 @@ class personaje_nivel1:public QObject,public QGraphicsItem
 private:
     //ATRIBUTOS:
     int pos_x,pos_y,velocidad=6,ancho=121,altura=143;
-    QPixmap *mapa_personaje=new QPixmap("espalda.png");
+    QPixmap *mapa_personaje=new QPixmap(":/imagenes_juego/espalda.png");
 public:
     personaje_nivel1();
     personaje_nivel1(int x,int y);

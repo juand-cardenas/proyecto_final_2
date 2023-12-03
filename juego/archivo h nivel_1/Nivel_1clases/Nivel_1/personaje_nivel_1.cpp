@@ -32,21 +32,21 @@ void personaje_nivel1::paint(QPainter *painter, const QStyleOptionGraphicsItem *
 
 void personaje_nivel1::movimiento_derecha()
 {
-    mapa_personaje->load("Derecha.png");
+    mapa_personaje->load(":/imagenes_juego/Derecha.png");
     pos_x+=velocidad;
     setPos(pos_x,pos_y);
 }
 
 void personaje_nivel1::movimiento_izquierda()
 {
-    mapa_personaje->load("Izquierda.png");
+    mapa_personaje->load(":/imagenes_juego/Izquierda.png");
     pos_x-=velocidad;
     setPos(pos_x,pos_y);
 }
 
 void personaje_nivel1::movimiento_arriba()
 {
-    mapa_personaje->load("espalda.png");
+    mapa_personaje->load(":/imagenes_juego/espalda.png");
     pos_y=pos_y-10*velocidad;
     pos_x=338;
     setPos(pos_x,pos_y);

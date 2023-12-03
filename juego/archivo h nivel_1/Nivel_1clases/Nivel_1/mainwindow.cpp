@@ -35,7 +35,7 @@ void MainWindow::escena1()
     personaje->setScale(0.39);
     scene1->addItem(personaje);
     ui->graphicsView->setScene(scene1);
-    QImage fondo_1("cancha_2_copy.jpeg");
+    QImage fondo_1(":/imagenes_juego/cancha_2_copy.jpeg");
     QBrush fondo_pinta(fondo_1);
     ui->graphicsView->setBackgroundBrush(fondo_pinta);
     scene1->setSceneRect(262,244,170,90);
@@ -334,10 +334,10 @@ void MainWindow :: movimiento_bolitas_2(){
 
 
 void MainWindow::tipo_movimiento_del_obstaculo(){
-    if(tipo_de_movimiento==2){
+    if(tipo_de_movimiento==1){
         movimiento_bolitas_2();
     }
-    if(tipo_de_movimiento==1){
+    if(tipo_de_movimiento==2){
         movimiento_bolitas();
     }
 }

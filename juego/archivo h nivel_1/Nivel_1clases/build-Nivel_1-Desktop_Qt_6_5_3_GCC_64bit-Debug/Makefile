@@ -55,13 +55,15 @@ OBJECTS_DIR   = ./
 SOURCES       = ../Nivel_1/bolita.cpp \
 		../Nivel_1/main.cpp \
 		../Nivel_1/mainwindow.cpp \
-		../Nivel_1/personaje_nivel_1.cpp moc_bolita.cpp \
+		../Nivel_1/personaje_nivel_1.cpp qrc_imagenes_juego.cpp \
+		moc_bolita.cpp \
 		moc_mainwindow.cpp \
 		moc_personaje_nivel_1.cpp
 OBJECTS       = bolita.o \
 		main.o \
 		mainwindow.o \
 		personaje_nivel_1.o \
+		qrc_imagenes_juego.o \
 		moc_bolita.o \
 		moc_mainwindow.o \
 		moc_personaje_nivel_1.o
@@ -336,6 +338,7 @@ DIST          = /qt/6.5.3/gcc_64/mkspecs/features/spec_pre.prf \
 		/qt/6.5.3/gcc_64/mkspecs/features/qt_config.prf \
 		/qt/6.5.3/gcc_64/mkspecs/linux-g++/qmake.conf \
 		/qt/6.5.3/gcc_64/mkspecs/features/spec_post.prf \
+		../Nivel_1/.qmake.stash \
 		/qt/6.5.3/gcc_64/mkspecs/features/exclusive_builds.prf \
 		/qt/6.5.3/gcc_64/mkspecs/features/toolchain.prf \
 		/qt/6.5.3/gcc_64/mkspecs/features/default_pre.prf \
@@ -644,6 +647,7 @@ Makefile: ../Nivel_1/Nivel_1.pro /qt/6.5.3/gcc_64/mkspecs/linux-g++/qmake.conf /
 		/qt/6.5.3/gcc_64/mkspecs/features/qt_config.prf \
 		/qt/6.5.3/gcc_64/mkspecs/linux-g++/qmake.conf \
 		/qt/6.5.3/gcc_64/mkspecs/features/spec_post.prf \
+		.qmake.stash \
 		/qt/6.5.3/gcc_64/mkspecs/features/exclusive_builds.prf \
 		/qt/6.5.3/gcc_64/mkspecs/features/toolchain.prf \
 		/qt/6.5.3/gcc_64/mkspecs/features/default_pre.prf \
@@ -665,6 +669,7 @@ Makefile: ../Nivel_1/Nivel_1.pro /qt/6.5.3/gcc_64/mkspecs/linux-g++/qmake.conf /
 		/qt/6.5.3/gcc_64/mkspecs/features/yacc.prf \
 		/qt/6.5.3/gcc_64/mkspecs/features/lex.prf \
 		../Nivel_1/Nivel_1.pro \
+		../Nivel_1/imagenes_juego.qrc \
 		/qt/6.5.3/gcc_64/lib/libQt6Widgets.prl \
 		/qt/6.5.3/gcc_64/lib/libQt6Gui.prl \
 		/qt/6.5.3/gcc_64/lib/libQt6Core.prl
@@ -940,6 +945,7 @@ Makefile: ../Nivel_1/Nivel_1.pro /qt/6.5.3/gcc_64/mkspecs/linux-g++/qmake.conf /
 /qt/6.5.3/gcc_64/mkspecs/features/qt_config.prf:
 /qt/6.5.3/gcc_64/mkspecs/linux-g++/qmake.conf:
 /qt/6.5.3/gcc_64/mkspecs/features/spec_post.prf:
+.qmake.stash:
 /qt/6.5.3/gcc_64/mkspecs/features/exclusive_builds.prf:
 /qt/6.5.3/gcc_64/mkspecs/features/toolchain.prf:
 /qt/6.5.3/gcc_64/mkspecs/features/default_pre.prf:
@@ -961,6 +967,7 @@ Makefile: ../Nivel_1/Nivel_1.pro /qt/6.5.3/gcc_64/mkspecs/linux-g++/qmake.conf /
 /qt/6.5.3/gcc_64/mkspecs/features/yacc.prf:
 /qt/6.5.3/gcc_64/mkspecs/features/lex.prf:
 ../Nivel_1/Nivel_1.pro:
+../Nivel_1/imagenes_juego.qrc:
 /qt/6.5.3/gcc_64/lib/libQt6Widgets.prl:
 /qt/6.5.3/gcc_64/lib/libQt6Gui.prl:
 /qt/6.5.3/gcc_64/lib/libQt6Core.prl:
@@ -978,6 +985,7 @@ dist: distdir FORCE
 distdir: FORCE
 	@test -d $(DISTDIR) || mkdir -p $(DISTDIR)
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
+	$(COPY_FILE) --parents ../Nivel_1/imagenes_juego.qrc $(DISTDIR)/
 	$(COPY_FILE) --parents /qt/6.5.3/gcc_64/mkspecs/features/data/dummy.cpp $(DISTDIR)/
 	$(COPY_FILE) --parents ../Nivel_1/bolita.h ../Nivel_1/mainwindow.h ../Nivel_1/personaje_nivel_1.h $(DISTDIR)/
 	$(COPY_FILE) --parents ../Nivel_1/bolita.cpp ../Nivel_1/main.cpp ../Nivel_1/mainwindow.cpp ../Nivel_1/personaje_nivel_1.cpp $(DISTDIR)/
@@ -1005,8 +1013,17 @@ check: first
 
 benchmark: first
 
-compiler_rcc_make_all:
+compiler_rcc_make_all: qrc_imagenes_juego.cpp
 compiler_rcc_clean:
+	-$(DEL_FILE) qrc_imagenes_juego.cpp
+qrc_imagenes_juego.cpp: ../Nivel_1/imagenes_juego.qrc \
+		/qt/6.5.3/gcc_64/libexec/rcc \
+		../Nivel_1/imagenes_juego/cancha_2_copy.jpeg \
+		../Nivel_1/imagenes_juego/Izquierda.png \
+		../Nivel_1/imagenes_juego/espalda.png \
+		../Nivel_1/imagenes_juego/Derecha.png
+	/qt/6.5.3/gcc_64/libexec/rcc -name imagenes_juego --no-zstd ../Nivel_1/imagenes_juego.qrc -o qrc_imagenes_juego.cpp
+
 compiler_moc_predefs_make_all: moc_predefs.h
 compiler_moc_predefs_clean:
 	-$(DEL_FILE) moc_predefs.h
@@ -1331,6 +1348,16 @@ moc_mainwindow.cpp: ../Nivel_1/mainwindow.h \
 		/qt/6.5.3/gcc_64/include/QtWidgets/QMessageBox \
 		/qt/6.5.3/gcc_64/include/QtWidgets/qmessagebox.h \
 		/qt/6.5.3/gcc_64/include/QtWidgets/qdialog.h \
+		/qt/6.5.3/gcc_64/include/QtCore/QVector \
+		/qt/6.5.3/gcc_64/include/QtCore/qvector.h \
+		/qt/6.5.3/gcc_64/include/QtCore/QTime \
+		/qt/6.5.3/gcc_64/include/QtCore/qdatetime.h \
+		/qt/6.5.3/gcc_64/include/QtCore/qcalendar.h \
+		/qt/6.5.3/gcc_64/include/QtCore/qlocale.h \
+		/qt/6.5.3/gcc_64/include/QtCore/QTimer \
+		/qt/6.5.3/gcc_64/include/QtCore/qtimer.h \
+		/qt/6.5.3/gcc_64/include/QtCore/qbasictimer.h \
+		/qt/6.5.3/gcc_64/include/QtGui/QKeyEvent \
 		../Nivel_1/personaje_nivel_1.h \
 		/qt/6.5.3/gcc_64/include/QtWidgets/QGraphicsItem \
 		/qt/6.5.3/gcc_64/include/QtGui/QPainter \
@@ -1472,6 +1499,13 @@ moc_personaje_nivel_1.cpp: ../Nivel_1/personaje_nivel_1.h \
 		/qt/6.5.3/gcc_64/include/QtGui/qimage.h \
 		/qt/6.5.3/gcc_64/include/QtGui/qpixelformat.h \
 		/qt/6.5.3/gcc_64/include/QtCore/QObject \
+		/qt/6.5.3/gcc_64/include/QtCore/QTimer \
+		/qt/6.5.3/gcc_64/include/QtCore/qtimer.h \
+		/qt/6.5.3/gcc_64/include/QtCore/qbasictimer.h \
+		/qt/6.5.3/gcc_64/include/QtCore/QTime \
+		/qt/6.5.3/gcc_64/include/QtCore/qdatetime.h \
+		/qt/6.5.3/gcc_64/include/QtCore/qcalendar.h \
+		/qt/6.5.3/gcc_64/include/QtCore/qlocale.h \
 		/qt/6.5.3/gcc_64/include/QtGui/QPainter \
 		/qt/6.5.3/gcc_64/include/QtGui/qpainter.h \
 		/qt/6.5.3/gcc_64/include/QtGui/qtextoption.h \
@@ -1502,7 +1536,7 @@ compiler_yacc_impl_make_all:
 compiler_yacc_impl_clean:
 compiler_lex_make_all:
 compiler_lex_clean:
-compiler_clean: compiler_moc_predefs_clean compiler_moc_header_clean compiler_uic_clean 
+compiler_clean: compiler_rcc_clean compiler_moc_predefs_clean compiler_moc_header_clean compiler_uic_clean 
 
 ####### Compile
 
@@ -1819,6 +1853,16 @@ main.o: ../Nivel_1/main.cpp ../Nivel_1/mainwindow.h \
 		/qt/6.5.3/gcc_64/include/QtWidgets/QMessageBox \
 		/qt/6.5.3/gcc_64/include/QtWidgets/qmessagebox.h \
 		/qt/6.5.3/gcc_64/include/QtWidgets/qdialog.h \
+		/qt/6.5.3/gcc_64/include/QtCore/QVector \
+		/qt/6.5.3/gcc_64/include/QtCore/qvector.h \
+		/qt/6.5.3/gcc_64/include/QtCore/QTime \
+		/qt/6.5.3/gcc_64/include/QtCore/qdatetime.h \
+		/qt/6.5.3/gcc_64/include/QtCore/qcalendar.h \
+		/qt/6.5.3/gcc_64/include/QtCore/qlocale.h \
+		/qt/6.5.3/gcc_64/include/QtCore/QTimer \
+		/qt/6.5.3/gcc_64/include/QtCore/qtimer.h \
+		/qt/6.5.3/gcc_64/include/QtCore/qbasictimer.h \
+		/qt/6.5.3/gcc_64/include/QtGui/QKeyEvent \
 		../Nivel_1/personaje_nivel_1.h \
 		/qt/6.5.3/gcc_64/include/QtWidgets/QGraphicsItem \
 		/qt/6.5.3/gcc_64/include/QtGui/QPainter \
@@ -1845,7 +1889,6 @@ main.o: ../Nivel_1/main.cpp ../Nivel_1/mainwindow.h \
 		/qt/6.5.3/gcc_64/include/QtCore/qpromise.h \
 		/qt/6.5.3/gcc_64/include/QtGui/qguiapplication.h \
 		/qt/6.5.3/gcc_64/include/QtGui/qinputmethod.h \
-		/qt/6.5.3/gcc_64/include/QtCore/qlocale.h \
 		/qt/6.5.3/gcc_64/include/QtGui/qguiapplication_platform.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o main.o ../Nivel_1/main.cpp
 
@@ -2020,13 +2063,57 @@ mainwindow.o: ../Nivel_1/mainwindow.cpp ../Nivel_1/mainwindow.h \
 		/qt/6.5.3/gcc_64/include/QtWidgets/QMessageBox \
 		/qt/6.5.3/gcc_64/include/QtWidgets/qmessagebox.h \
 		/qt/6.5.3/gcc_64/include/QtWidgets/qdialog.h \
+		/qt/6.5.3/gcc_64/include/QtCore/QVector \
+		/qt/6.5.3/gcc_64/include/QtCore/qvector.h \
+		/qt/6.5.3/gcc_64/include/QtCore/QTime \
+		/qt/6.5.3/gcc_64/include/QtCore/qdatetime.h \
+		/qt/6.5.3/gcc_64/include/QtCore/qcalendar.h \
+		/qt/6.5.3/gcc_64/include/QtCore/qlocale.h \
+		/qt/6.5.3/gcc_64/include/QtCore/QTimer \
+		/qt/6.5.3/gcc_64/include/QtCore/qtimer.h \
+		/qt/6.5.3/gcc_64/include/QtCore/qbasictimer.h \
+		/qt/6.5.3/gcc_64/include/QtGui/QKeyEvent \
 		../Nivel_1/personaje_nivel_1.h \
 		/qt/6.5.3/gcc_64/include/QtWidgets/QGraphicsItem \
 		/qt/6.5.3/gcc_64/include/QtGui/QPainter \
 		/qt/6.5.3/gcc_64/include/QtGui/qpainter.h \
 		/qt/6.5.3/gcc_64/include/QtGui/qtextoption.h \
 		../Nivel_1/bolita.h \
-		ui_mainwindow.h
+		ui_mainwindow.h \
+		/qt/6.5.3/gcc_64/include/QtCore/QVariant \
+		/qt/6.5.3/gcc_64/include/QtWidgets/QApplication \
+		/qt/6.5.3/gcc_64/include/QtWidgets/qapplication.h \
+		/qt/6.5.3/gcc_64/include/QtCore/qcoreapplication.h \
+		/qt/6.5.3/gcc_64/include/QtCore/qeventloop.h \
+		/qt/6.5.3/gcc_64/include/QtCore/qcoreapplication_platform.h \
+		/qt/6.5.3/gcc_64/include/QtCore/qfuture.h \
+		/qt/6.5.3/gcc_64/include/QtCore/qfutureinterface.h \
+		/qt/6.5.3/gcc_64/include/QtCore/qmutex.h \
+		/qt/6.5.3/gcc_64/include/QtCore/qtsan_impl.h \
+		/qt/6.5.3/gcc_64/include/QtCore/qresultstore.h \
+		/qt/6.5.3/gcc_64/include/QtCore/qfuture_impl.h \
+		/qt/6.5.3/gcc_64/include/QtCore/qthreadpool.h \
+		/qt/6.5.3/gcc_64/include/QtCore/qthread.h \
+		/qt/6.5.3/gcc_64/include/QtCore/qdeadlinetimer.h \
+		/qt/6.5.3/gcc_64/include/QtCore/qelapsedtimer.h \
+		/qt/6.5.3/gcc_64/include/QtCore/qrunnable.h \
+		/qt/6.5.3/gcc_64/include/QtCore/qexception.h \
+		/qt/6.5.3/gcc_64/include/QtCore/qpromise.h \
+		/qt/6.5.3/gcc_64/include/QtGui/qguiapplication.h \
+		/qt/6.5.3/gcc_64/include/QtGui/qinputmethod.h \
+		/qt/6.5.3/gcc_64/include/QtGui/qguiapplication_platform.h \
+		/qt/6.5.3/gcc_64/include/QtWidgets/QGraphicsView \
+		/qt/6.5.3/gcc_64/include/QtWidgets/qgraphicsview.h \
+		/qt/6.5.3/gcc_64/include/QtWidgets/qscrollarea.h \
+		/qt/6.5.3/gcc_64/include/QtWidgets/qabstractscrollarea.h \
+		/qt/6.5.3/gcc_64/include/QtWidgets/qframe.h \
+		/qt/6.5.3/gcc_64/include/QtWidgets/QLabel \
+		/qt/6.5.3/gcc_64/include/QtWidgets/qlabel.h \
+		/qt/6.5.3/gcc_64/include/QtGui/qpicture.h \
+		/qt/6.5.3/gcc_64/include/QtGui/qtextdocument.h \
+		/qt/6.5.3/gcc_64/include/QtWidgets/QStatusBar \
+		/qt/6.5.3/gcc_64/include/QtWidgets/qstatusbar.h \
+		/qt/6.5.3/gcc_64/include/QtWidgets/QWidget
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o mainwindow.o ../Nivel_1/mainwindow.cpp
 
 personaje_nivel_1.o: ../Nivel_1/personaje_nivel_1.cpp ../Nivel_1/personaje_nivel_1.h \
@@ -2160,6 +2247,13 @@ personaje_nivel_1.o: ../Nivel_1/personaje_nivel_1.cpp ../Nivel_1/personaje_nivel
 		/qt/6.5.3/gcc_64/include/QtGui/qimage.h \
 		/qt/6.5.3/gcc_64/include/QtGui/qpixelformat.h \
 		/qt/6.5.3/gcc_64/include/QtCore/QObject \
+		/qt/6.5.3/gcc_64/include/QtCore/QTimer \
+		/qt/6.5.3/gcc_64/include/QtCore/qtimer.h \
+		/qt/6.5.3/gcc_64/include/QtCore/qbasictimer.h \
+		/qt/6.5.3/gcc_64/include/QtCore/QTime \
+		/qt/6.5.3/gcc_64/include/QtCore/qdatetime.h \
+		/qt/6.5.3/gcc_64/include/QtCore/qcalendar.h \
+		/qt/6.5.3/gcc_64/include/QtCore/qlocale.h \
 		/qt/6.5.3/gcc_64/include/QtGui/QPainter \
 		/qt/6.5.3/gcc_64/include/QtGui/qpainter.h \
 		/qt/6.5.3/gcc_64/include/QtGui/qtextoption.h \
@@ -2170,6 +2264,9 @@ personaje_nivel_1.o: ../Nivel_1/personaje_nivel_1.cpp ../Nivel_1/personaje_nivel
 		/qt/6.5.3/gcc_64/include/QtGui/qfontmetrics.h \
 		/qt/6.5.3/gcc_64/include/QtGui/QPixmap
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o personaje_nivel_1.o ../Nivel_1/personaje_nivel_1.cpp
+
+qrc_imagenes_juego.o: qrc_imagenes_juego.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o qrc_imagenes_juego.o qrc_imagenes_juego.cpp
 
 moc_bolita.o: moc_bolita.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_bolita.o moc_bolita.cpp
