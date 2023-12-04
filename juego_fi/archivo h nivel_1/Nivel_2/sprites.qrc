@@ -1,0 +1,36 @@
+<RCC>
+    <qresource prefix="/Morty">
+        <file>sprites/Morty/Mobile - Pocket Mortys - 078 Guard Morty.png</file>
+        <file>sprites/Morty/MortyDerecha1.png</file>
+        <file>sprites/Morty/MortyDerecha2.png</file>
+        <file>sprites/Morty/MortyDerecha3.png</file>
+        <file>sprites/Morty/MortyDerecha4.png</file>
+        <file>sprites/Morty/MortyDetras1.png</file>
+        <file>sprites/Morty/MortyDetras2.png</file>
+        <file>sprites/Morty/MortyDetras3.png</file>
+        <file>sprites/Morty/MortyDetras4.png</file>
+        <file>sprites/Morty/MortyFrente1.png</file>
+        <file>sprites/Morty/MortyFrente2.png</file>
+        <file>sprites/Morty/MortyFrente3.png</file>
+        <file>sprites/Morty/MortyFrente4.png</file>
+        <file>sprites/Morty/MortyIzquierda1.png</file>
+        <file>sprites/Morty/MortyIzquierda2.png</file>
+        <file>sprites/Morty/MortyIzquierda3.png</file>
+        <file>sprites/Morty/MortyIzquierda4.png</file>
+    </qresource>
+    <qresource prefix="/Rick"/>
+    <qresource prefix="/Background">
+        <file>sprites/background/prueba.png</file>
+    </qresource>
+    <qresource prefix="/Enemigo">
+        <file>sprites/Enemigos/enemigo_derecha2.png</file>
+        <file>sprites/Enemigos/enemigo_derecha1.png</file>
+        <file>sprites/Enemigos/copy.png</file>
+    </qresource>
+    <qresource prefix="/Vida">
+        <file>sprites/Vida/heart pixel art 32x32.png</file>
+    </qresource>
+    <qresource prefix="/Proyectil">
+        <file>sprites/Proyectil/Bola_de_fuego.png</file>
+    </qresource>
+</RCC>
