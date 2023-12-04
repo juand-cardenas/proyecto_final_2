@@ -17,7 +17,7 @@ MainWindow::MainWindow(QWidget *parent)
     estado_escena=true;
 
     //ESCENA PRE_JUEGO
-    scene1->setSceneRect(10,10,759,549);
+    scene1->setSceneRect(10,10,750,530);
     ui->graphicsView->setScene(scene1);
     QImage fondo_0(":/imagenes_juego/pre_juego.jpg");
     QBrush brocha_fondo_0(fondo_0);
@@ -107,7 +107,7 @@ void MainWindow :: inicio_juego(){
     int num,num_2;
     srand(time(NULL));
     for (size_t i=0;i<n;i++){
-        int rando_pos=-27 + rand()%(687-27);
+        int rando_pos=-26 + rand()%(746);
         int rando_posy= -110 +rand()% (120-3);
         num=rando_pos;
         num_2=rando_posy;
