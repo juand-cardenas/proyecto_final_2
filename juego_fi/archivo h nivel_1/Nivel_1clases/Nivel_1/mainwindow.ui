@@ -23,15 +23,31 @@
       <height>551</height>
      </rect>
     </property>
+    <property name="horizontalScrollBarPolicy">
+     <enum>Qt::ScrollBarAsNeeded</enum>
+    </property>
+    <property name="sizeAdjustPolicy">
+     <enum>QAbstractScrollArea::AdjustToContents</enum>
+    </property>
+    <property name="resizeAnchor">
+     <enum>QGraphicsView::AnchorViewCenter</enum>
+    </property>
    </widget>
    <widget class="QLabel" name="Cronometro">
     <property name="geometry">
      <rect>
       <x>636</x>
       <y>30</y>
-      <width>111</width>
-      <height>51</height>
+      <width>221</width>
+      <height>61</height>
      </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Arial Black</family>
+      <pointsize>18</pointsize>
+      <bold>true</bold>
+     </font>
     </property>
     <property name="text">
      <string/>
@@ -40,8 +56,8 @@
    <widget class="QLabel" name="Cronometro_2">
     <property name="geometry">
      <rect>
-      <x>260</x>
-      <y>30</y>
+      <x>380</x>
+      <y>10</y>
       <width>221</width>
       <height>61</height>
      </rect>

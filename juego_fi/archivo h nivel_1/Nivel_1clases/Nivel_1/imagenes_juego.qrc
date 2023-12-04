@@ -4,6 +4,7 @@
         <file>imagenes_juego/Derecha.png</file>
         <file>imagenes_juego/espalda.png</file>
         <file>imagenes_juego/Izquierda.png</file>
+        <file>imagenes_juego/pre_juego.jpg</file>
     </qresource>
     <qresource prefix="/Enemigo">
         <file>sprites/Enemigos/copy.png</file>

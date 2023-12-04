@@ -10,11 +10,18 @@ MainWindow::MainWindow(QWidget *parent)
     ui->setupUi(this);
 
 
-    linea_limite();
+
     crear_grupo_de_bolitas();
 
     //control de escena
     estado_escena=true;
+
+    //ESCENA PRE_JUEGO
+    scene1->setSceneRect(10,10,759,549);
+    ui->graphicsView->setScene(scene1);
+    QImage fondo_0(":/imagenes_juego/pre_juego.jpg");
+    QBrush brocha_fondo_0(fondo_0);
+    scene1->setBackgroundBrush(brocha_fondo_0);
 
     //Timers
     connect(timer_1, SIGNAL(timeout()), this, SLOT(actualizar_estado()));
@@ -51,6 +58,7 @@ MainWindow::~MainWindow()
 
 void MainWindow::escena1()
 {
+    ui->graphicsView->setGeometry(0,0,771,551);
     scene1->setSceneRect(0,0,769,549);
 
     personaje->setScale(0.39);
@@ -60,9 +68,9 @@ void MainWindow::escena1()
     QBrush fondo_pinta(fondo_1);
     ui->graphicsView->setBackgroundBrush(fondo_pinta);
     scene1->setSceneRect(262,244,170,90);
-    ui->graphicsView->scale(1.149,0.988);
+    //ui->graphicsView->scale(1.149,0.988);
 
-
+    linea_limite();
     inicio_juego();
 
 
@@ -92,7 +100,7 @@ void MainWindow :: linea_limite(){
 }
 
 void MainWindow :: inicio_juego(){
-    timed.setHMS(0,0,20);
+    timed.setHMS(0,0,2);
     ui->Cronometro->setText(timed.toString("m:ss"));
     timer_1->start(1000);
     timer_2->start(100);
@@ -328,6 +336,7 @@ void MainWindow :: definir_final_de_juego(){
             timer_2->stop();
             nivel_actual=false;
             ui->Cronometro->hide();
+            ui->Cronometro_2->show();
             Inicio_Nivel_2();
         }
     }
@@ -482,6 +491,9 @@ void MainWindow::Nivel_2_terminado(bool win_lose)
     Msgbox->setEscapeButton(QMessageBox::Close);
     if(QMessageBox::Yes==Msgbox->exec()){
         //Inicio Juego 1
+        ui->Cronometro_2->hide();
+        ui->Cronometro->show();
+        escena1();
     }
     else{
         QCoreApplication::quit();
@@ -492,12 +504,17 @@ void MainWindow::Nivel_2_terminado(bool win_lose)
 void MainWindow::Inicio_Nivel_2()
 {
     scene2=new QGraphicsScene();
+
+    ui->graphicsView->setGeometry(0,0,800,600);
+
     scene2->setSceneRect(0,0,798,598);
     ui->graphicsView->setScene(scene2);
 
     QImage imagenFondo(":/Background/sprites/background/prueba.png");
     QBrush brochaFondo(imagenFondo);
     ui->graphicsView->setBackgroundBrush(brochaFondo);
+
+
     corazones.insert(0,new QGraphicsPixmapItem(*cora));
     corazones.insert(1,new QGraphicsPixmapItem(*cora));
     corazones.insert(2,new QGraphicsPixmapItem(*cora));

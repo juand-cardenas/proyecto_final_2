@@ -45,7 +45,7 @@ private:
     QVector<Proyectil_personaje*> vector_proyectiles;
     QVector<QGraphicsPixmapItem*> corazones;
     QPixmap *cora=new QPixmap(":/Vida/sprites/Vida/heart pixel art 32x32.png");
-    QMessageBox *msgbox=new QMessageBox();
+    QMessageBox *Msgbox=new QMessageBox();
 
     Personaje *p1,*p2;
     QTime cuenta_regresiva;

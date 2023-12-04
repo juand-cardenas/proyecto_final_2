@@ -209,6 +209,7 @@ debug\qrc_imagenes_juego.cpp: ..\Nivel_1\imagenes_juego.qrc \
 		..\Nivel_1\sprites\Morty\MortyIzquierda1.png \
 		..\Nivel_1\imagenes_juego\espalda.png \
 		..\Nivel_1\imagenes_juego\cancha_2_copy.jpeg \
+		..\Nivel_1\imagenes_juego\pre_juego.jpg \
 		..\Nivel_1\imagenes_juego\Derecha.png \
 		..\Nivel_1\imagenes_juego\Izquierda.png \
 		..\Nivel_1\sprites\Proyectil\Bola_de_fuego.png \
@@ -1454,7 +1455,25 @@ debug\mainwindow.obj: ..\Nivel_1\mainwindow.cpp ..\Nivel_1\mainwindow.h \
 		C:\Qt\5.15.2\msvc2015_64\include\QtGui\Qpainter \
 		..\Nivel_1\proyectil_personaje.h \
 		C:\Qt\5.15.2\msvc2015_64\include\QtCore\QList \
-		ui_mainwindow.h
+		ui_mainwindow.h \
+		C:\Qt\5.15.2\msvc2015_64\include\QtCore\QVariant \
+		C:\Qt\5.15.2\msvc2015_64\include\QtWidgets\QApplication \
+		C:\Qt\5.15.2\msvc2015_64\include\QtWidgets\qapplication.h \
+		C:\Qt\5.15.2\msvc2015_64\include\QtCore\qcoreapplication.h \
+		C:\Qt\5.15.2\msvc2015_64\include\QtCore\qeventloop.h \
+		C:\Qt\5.15.2\msvc2015_64\include\QtWidgets\qdesktopwidget.h \
+		C:\Qt\5.15.2\msvc2015_64\include\QtGui\qguiapplication.h \
+		C:\Qt\5.15.2\msvc2015_64\include\QtGui\qinputmethod.h \
+		C:\Qt\5.15.2\msvc2015_64\include\QtWidgets\QGraphicsView \
+		C:\Qt\5.15.2\msvc2015_64\include\QtWidgets\qgraphicsview.h \
+		C:\Qt\5.15.2\msvc2015_64\include\QtWidgets\qscrollarea.h \
+		C:\Qt\5.15.2\msvc2015_64\include\QtWidgets\qabstractscrollarea.h \
+		C:\Qt\5.15.2\msvc2015_64\include\QtWidgets\qframe.h \
+		C:\Qt\5.15.2\msvc2015_64\include\QtWidgets\QLabel \
+		C:\Qt\5.15.2\msvc2015_64\include\QtWidgets\qlabel.h \
+		C:\Qt\5.15.2\msvc2015_64\include\QtWidgets\QStatusBar \
+		C:\Qt\5.15.2\msvc2015_64\include\QtWidgets\qstatusbar.h \
+		C:\Qt\5.15.2\msvc2015_64\include\QtWidgets\QWidget
 
 debug\personaje.obj: ..\Nivel_1\personaje.cpp ..\Nivel_1\personaje.h \
 		C:\Qt\5.15.2\msvc2015_64\include\QtWidgets\QGraphicsItem \
