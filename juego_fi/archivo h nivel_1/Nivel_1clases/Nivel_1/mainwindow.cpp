@@ -40,17 +40,15 @@ MainWindow::~MainWindow()
     }
 
     /*for(int i=0;i<3;i++){
-        if(scene2->items().contains(corazones[i])){
-           scene2->removeItem(corazones[i]);
-        }
-
         delete corazones[i];
     }*/
+    corazones.clear();
     delete cora;
     for(int i=0;i<vector_proyectiles.size();i++){
-        scene2->removeItem(vector_proyectiles[i]);
+        //qDebug()<<vector_proyectiles.size();
         delete vector_proyectiles[i];
     }
+    vector_proyectiles.clear();
     delete p1;
     delete scene2;
     delete ui;
@@ -172,7 +170,7 @@ void MainWindow :: keyPressEvent(QKeyEvent *e){
 
             p1->Mov_up();
         }
-        else if(e->key()==Qt::Key_S && p1->get_pos_y()<=537 ){
+        else if(e->key()==Qt::Key_S && p1->get_pos_y()<500 ){
 
             p1->Mov_down();
         }
@@ -185,32 +183,66 @@ void MainWindow :: keyPressEvent(QKeyEvent *e){
             QPixmap detras1(":/Morty/sprites/Morty/MortyDetras1.png");
             if(*p1->get_mapa_sprite()==izquierda1 ){
                 //DISPARA A LA IZQUIERDA
-                vector_proyectiles[0]->set_posiciones(p1->get_pos_x(),p1->get_pos_y());
+                if(scene2->items().contains(vector_proyectiles[0])){
 
-                vector_proyectiles[0]->getTimer()->start(100);
-                scene2->addItem(vector_proyectiles[0]);
+                    vector_proyectiles[0]->set_posiciones(p1->get_pos_x(),p1->get_pos_y());
+                    vector_proyectiles[0]->getTimer()->start(100);
 
+
+                }
+                else{
+                    vector_proyectiles[0]->set_posiciones(p1->get_pos_x(),p1->get_pos_y());
+                    vector_proyectiles[0]->getTimer()->start(100);
+                    scene2->addItem(vector_proyectiles[0]);
+                }
             }
             else if(*p1->get_mapa_sprite()==derecha1){
                 //DISPARA A LA DERECHA
-                vector_proyectiles[1]->set_posiciones(p1->get_pos_x(),p1->get_pos_y());
+                if(scene2->items().contains(vector_proyectiles[1])){
 
-                vector_proyectiles[1]->getTimer()->start(100);
-                scene2->addItem(vector_proyectiles[1]);
+                    vector_proyectiles[1]->set_posiciones(p1->get_pos_x(),p1->get_pos_y());
+                    vector_proyectiles[1]->getTimer()->start(100);
+
+                }
+                else{
+
+                    vector_proyectiles[1]->set_posiciones(p1->get_pos_x(),p1->get_pos_y());
+                    vector_proyectiles[1]->getTimer()->start(100);
+                    scene2->addItem(vector_proyectiles[1]);
+                }
+
             }
             else if(*p1->get_mapa_sprite()==frente1){
                 //DISPARA  LA ABAJO
-                vector_proyectiles[2]->set_posiciones(p1->get_pos_x(),p1->get_pos_y());
+                if(scene2->items().contains(vector_proyectiles[2])){
+                    vector_proyectiles[2]->set_posiciones(p1->get_pos_x(),p1->get_pos_y());
+                    vector_proyectiles[2]->getTimer()->start(100);
 
-                vector_proyectiles[2]->getTimer()->start(100);
-                scene2->addItem(vector_proyectiles[2]);
+                }
+                else{
+
+                    vector_proyectiles[2]->set_posiciones(p1->get_pos_x(),p1->get_pos_y());
+                    vector_proyectiles[2]->getTimer()->start(100);
+                    scene2->addItem(vector_proyectiles[2]);
+                }
+
+
             }
             else if(*p1->get_mapa_sprite()==detras1){
                 //DISPARA A ARRIBA
-                vector_proyectiles[3]->set_posiciones(p1->get_pos_x(),p1->get_pos_y());
+                if(scene2->items().contains(vector_proyectiles[3])){
 
+                vector_proyectiles[3]->set_posiciones(p1->get_pos_x(),p1->get_pos_y());
+                vector_proyectiles[3]->getTimer()->start(100);
+
+                }
+                else{
+
+                vector_proyectiles[3]->set_posiciones(p1->get_pos_x(),p1->get_pos_y());
                 vector_proyectiles[3]->getTimer()->start(100);
                 scene2->addItem(vector_proyectiles[3]);
+                }
+
             }
 
 
@@ -227,7 +259,7 @@ void MainWindow:: movimiento_bolitas(){
         bolitas[i]->setPos_y( auxiliar.getVel_y()+4.82+bolitas[i]->getPos_y());
         bolitas[i]->colocar_posiciones(bolitas[i]->getPos_x(),bolitas[i]->getPos_y());
         if(bolitas[i]->getPos_y()>=540){
-            int rando_pos=27 + rand()%(689-27);
+            int rando_pos=-26 + rand()%(746);
             int rando_posy= -110 +rand()% (120-3);
             num=rando_pos;
             num_2=rando_posy;
@@ -402,7 +434,7 @@ void MainWindow :: movimiento_bolitas_2(){
             bolitas[i]->setPos_y(bolitas[i]->getPos_y()+(auxiliar.getMovi_y()*h));
             bolitas[i]->colocar_posiciones(bolitas[i]->getPos_x(),bolitas[i]->getPos_y());
             if(bolitas[i]->getPos_y()>=650){
-                int rando_pos=-8 + rand()%(630-8);
+                int rando_pos=-26+ rand()%(746);
                 int rando_posy= -110 +rand()% (120-3);
                 num=rando_pos;
                 num_2=rando_posy;
@@ -594,11 +626,11 @@ void MainWindow::mov_enemigos()
     for(int i=0;i<4;i++){
 
         if(scene2->items().contains( Mapa_enemigos[i])){
-            qDebug()<<"está en la escena";
+            //qDebug()<<"está en la escena";
                         Mapa_enemigos[i]->persecucion_personaje(p1->get_pos_x() ,p1->get_pos_y());
         }
         else{
-            qDebug()<<"se desplazo";
+            //qDebug()<<"se desplazo";
             Mapa_enemigos[i]->set_posiciones(100+20*i,700);
         }
 
@@ -618,7 +650,7 @@ void MainWindow::colision_entre_enemigos()
                 if(i!=j){
                     if(iterador!=Mapa_enemigos.end() && iterador2!=Mapa_enemigos.end()){
                         if(Mapa_enemigos[i]->collidesWithItem(Mapa_enemigos[j])){
-                            //qDebug()<<" Colision de "<<i<<" y"<<j;
+                            ////qDebug()<<" Colision de "<<i<<" y"<<j;
                             mover_enemigo_colisionado(i);
                             mover_enemigo_colisionado(j);
                         }
@@ -634,7 +666,7 @@ void MainWindow::colision_enemigo_personaje()
 
     for(int i=0;i<Mapa_enemigos.size();i++){
         if(p1->collidesWithItem(Mapa_enemigos[i])){
-            qDebug()<<p1->getVida();
+            //qDebug()<<p1->getVida();
             if(p1->getVida()>0){
                 mover_enemigo_colisionado_personaje(i);
                 p1->setVida(p1->getVida()-1);
@@ -669,12 +701,12 @@ void MainWindow::colision_enemigo_proyectil()
             for(int j=0;j<4;j++){
                 if(scene2->items().contains(Mapa_enemigos[i])){
                     if(Mapa_enemigos[i]->collidesWithItem(vector_proyectiles[j])){
-                        qDebug()<<"Colision entre, proyectil"<<j<<"y enemigo"<<i;
-                        scene2->removeItem(vector_proyectiles[j]);
-                        qDebug()<<"se removio de la escena al proyectil: "<<j;
+                        //qDebug()<<"Colision entre, proyectil"<<j<<"y enemigo"<<i;
+                        //scene2->removeItem(vector_proyectiles[j]);
+                        //qDebug()<<"se removio de la escena al proyectil: "<<j;
                         scene2->removeItem(Mapa_enemigos[i]);
 
-                        qDebug()<<"se removio de la escena al enemigo: "<<i;
+                        //qDebug()<<"se removio de la escena al enemigo: "<<i;
 
 
 
@@ -689,7 +721,7 @@ void MainWindow::aparicion_periodica_enemigos()
 {
     for(int i=0;i<Mapa_enemigos.size();i++){
         if(!scene2->items().contains( Mapa_enemigos[i])){
-            qDebug()<<"No está en la escena";
+            //qDebug()<<"No está en la escena";
                 if(i==0){
                 Mapa_enemigos[i]->set_posiciones(10,260);
             }

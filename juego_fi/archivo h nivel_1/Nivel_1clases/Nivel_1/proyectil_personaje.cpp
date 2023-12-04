@@ -19,19 +19,19 @@ Proyectil_personaje::Proyectil_personaje(int x, int y,char direccion)
     direccion_disparo=direccion;
     setPos(pos_x,pos_y);
     if(direccion_disparo=='l'){
-        qDebug()<<"izquierda";
+        //qDebug()<<"izquierda";
         connect(timer,SIGNAL(timeout()),this,SLOT(Mov_left()));
     }
     else if(direccion_disparo=='r'){
-        qDebug()<<"derecha";
+        //qDebug()<<"derecha";
         connect(timer,SIGNAL(timeout()),this,SLOT(Mov_rigth()));
     }
     else if(direccion_disparo=='u'){
-        qDebug()<<"Arriba";
+        //qDebug()<<"Arriba";
         connect(timer,SIGNAL(timeout()),this,SLOT(Mov_up()));
     }
     else if(direccion_disparo=='d'){
-        qDebug()<<"Abajo";
+        //qDebug()<<"Abajo";
         connect(timer,SIGNAL(timeout()),this,SLOT(Mov_down()));
     }
 
