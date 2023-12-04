@@ -5,4 +5,22 @@
         <file>imagenes_juego/espalda.png</file>
         <file>imagenes_juego/Izquierda.png</file>
     </qresource>
+    <qresource prefix="/Enemigo">
+        <file>sprites/Enemigos/copy.png</file>
+    </qresource>
+    <qresource prefix="/Background">
+        <file>sprites/background/prueba.png</file>
+    </qresource>
+    <qresource prefix="/Morty">
+        <file>sprites/Morty/MortyIzquierda1.png</file>
+        <file>sprites/Morty/MortyDerecha1.png</file>
+        <file>sprites/Morty/MortyDetras1.png</file>
+        <file>sprites/Morty/MortyFrente1.png</file>
+    </qresource>
+    <qresource prefix="/Proyectil">
+        <file>sprites/Proyectil/Bola_de_fuego.png</file>
+    </qresource>
+    <qresource prefix="/Vida">
+        <file>sprites/Vida/heart pixel art 32x32.png</file>
+    </qresource>
 </RCC>

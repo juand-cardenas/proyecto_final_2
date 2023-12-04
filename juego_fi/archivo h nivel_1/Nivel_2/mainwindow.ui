@@ -24,12 +24,12 @@
      </rect>
     </property>
    </widget>
-   <widget class="QLabel" name="Cronometro">
+   <widget class="QLabel" name="Cronometro_2">
     <property name="geometry">
      <rect>
       <x>330</x>
       <y>10</y>
-      <width>171</width>
+      <width>181</width>
       <height>51</height>
      </rect>
     </property>
@@ -41,7 +41,7 @@
      </font>
     </property>
     <property name="text">
-     <string> Cronometro</string>
+     <string> </string>
     </property>
    </widget>
   </widget>

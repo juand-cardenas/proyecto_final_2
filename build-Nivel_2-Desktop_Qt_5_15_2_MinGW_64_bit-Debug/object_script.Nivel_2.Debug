@@ -1,0 +1,10 @@
+debug/enemigos.o
+debug/main.o
+debug/mainwindow.o
+debug/personaje.o
+debug/proyectil_personaje.o
+debug/qrc_sprites.o
+debug/moc_enemigos.o
+debug/moc_mainwindow.o
+debug/moc_personaje.o
+debug/moc_proyectil_personaje.o

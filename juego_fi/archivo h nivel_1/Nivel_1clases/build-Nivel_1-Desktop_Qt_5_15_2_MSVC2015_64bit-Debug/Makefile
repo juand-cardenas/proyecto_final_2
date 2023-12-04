@@ -279,6 +279,7 @@ Makefile: ..\Nivel_1\Nivel_1.pro C:\Qt\5.15.2\msvc2015_64\mkspecs\win32-msvc\qma
 		C:\Qt\5.15.2\msvc2015_64\lib\Qt5Core.prl \
 		C:\Qt\5.15.2\msvc2015_64\lib\qtmain.prl \
 		C:\Qt\5.15.2\msvc2015_64\mkspecs\features\build_pass.prf \
+		..\Nivel_1\imagenes_juego.qrc \
 		C:\Qt\5.15.2\msvc2015_64\lib\Qt5Widgetsd.prl \
 		C:\Qt\5.15.2\msvc2015_64\lib\Qt5Guid.prl \
 		C:\Qt\5.15.2\msvc2015_64\lib\Qt5Cored.prl \
@@ -479,6 +480,7 @@ C:\Qt\5.15.2\msvc2015_64\lib\Qt5Gui.prl:
 C:\Qt\5.15.2\msvc2015_64\lib\Qt5Core.prl:
 C:\Qt\5.15.2\msvc2015_64\lib\qtmain.prl:
 C:\Qt\5.15.2\msvc2015_64\mkspecs\features\build_pass.prf:
+..\Nivel_1\imagenes_juego.qrc:
 C:\Qt\5.15.2\msvc2015_64\lib\Qt5Widgetsd.prl:
 C:\Qt\5.15.2\msvc2015_64\lib\Qt5Guid.prl:
 C:\Qt\5.15.2\msvc2015_64\lib\Qt5Cored.prl:

@@ -10,14 +10,20 @@ CONFIG += c++17
 
 SOURCES += \
     bolita.cpp \
+    enemigos.cpp \
     main.cpp \
     mainwindow.cpp \
-    personaje_nivel_1.cpp
+    personaje.cpp \
+    personaje_nivel_1.cpp \
+    proyectil_personaje.cpp
 
 HEADERS += \
     bolita.h \
+    enemigos.h \
     mainwindow.h \
-    personaje_nivel_1.h
+    personaje.h \
+    personaje_nivel_1.h \
+    proyectil_personaje.h
 
 FORMS += \
     mainwindow.ui

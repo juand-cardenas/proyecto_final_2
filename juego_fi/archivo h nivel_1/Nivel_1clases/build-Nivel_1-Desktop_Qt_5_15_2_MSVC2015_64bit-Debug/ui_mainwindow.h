@@ -12,6 +12,7 @@
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QGraphicsView>
+#include <QtWidgets/QLabel>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QStatusBar>
 #include <QtWidgets/QWidget>
@@ -23,6 +24,8 @@ class Ui_MainWindow
 public:
     QWidget *centralwidget;
     QGraphicsView *graphicsView;
+    QLabel *Cronometro;
+    QLabel *Cronometro_2;
     QStatusBar *statusbar;
 
     void setupUi(QMainWindow *MainWindow)
@@ -35,6 +38,17 @@ public:
         graphicsView = new QGraphicsView(centralwidget);
         graphicsView->setObjectName(QString::fromUtf8("graphicsView"));
         graphicsView->setGeometry(QRect(10, 10, 771, 551));
+        Cronometro = new QLabel(centralwidget);
+        Cronometro->setObjectName(QString::fromUtf8("Cronometro"));
+        Cronometro->setGeometry(QRect(636, 30, 111, 51));
+        Cronometro_2 = new QLabel(centralwidget);
+        Cronometro_2->setObjectName(QString::fromUtf8("Cronometro_2"));
+        Cronometro_2->setGeometry(QRect(260, 30, 221, 61));
+        QFont font;
+        font.setFamily(QString::fromUtf8("Arial Black"));
+        font.setPointSize(18);
+        font.setBold(true);
+        Cronometro_2->setFont(font);
         MainWindow->setCentralWidget(centralwidget);
         statusbar = new QStatusBar(MainWindow);
         statusbar->setObjectName(QString::fromUtf8("statusbar"));
@@ -48,6 +62,8 @@ public:
     void retranslateUi(QMainWindow *MainWindow)
     {
         MainWindow->setWindowTitle(QCoreApplication::translate("MainWindow", "MainWindow", nullptr));
+        Cronometro->setText(QString());
+        Cronometro_2->setText(QString());
     } // retranslateUi
 
 };

@@ -49,7 +49,7 @@ private:
 
     Personaje *p1,*p2;
     QTime cuenta_regresiva;
-    QTimer *timer_cronometro, *timer_mov_colisiones_aparicion;
+    QTimer *timer_cronometro_2, *timer_mov_colisiones_aparicion;
 private slots:
     void mov_enemigos();
     void colision_entre_enemigos();

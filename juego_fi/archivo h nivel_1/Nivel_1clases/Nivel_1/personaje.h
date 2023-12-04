@@ -1,0 +1,52 @@
+#ifndef PERSONAJE_H
+#define PERSONAJE_H
+#include<QGraphicsItem>
+#include<QGraphicsScene>
+#include<QPainter>
+#include<QGraphicsPixmapItem>
+#include<QPixmap>
+#include <QKeyEvent>
+#include<QObject>
+
+
+
+class Personaje:public QObject, public QGraphicsItem
+{
+    Q_OBJECT
+    Q_INTERFACES(QGraphicsItem)
+private:
+    //atributos:
+    int pos_x,pos_y,largo=125,ancho=125,velocidad=40,vida=3;
+    QPixmap *mapa_sprite=new QPixmap(":/Morty/sprites/Morty/MortyDerecha1.png");
+
+public:
+
+    //METODOS
+    //CONSTRUCTORES
+    Personaje();
+    Personaje(int x,int y);
+    //DECLARACION DE METODOS QUE ERAN ABSTRACTOS
+    QRectF boundingRect()const;
+    void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget = nullptr);
+    //SETTERS
+    void setVida(int newVida);
+
+    //MOVIMIENTOS;
+    void Mov_up();
+    void Mov_down();
+    void Mov_left();
+    void Mov_rigth();
+    //GETTERS
+    QPixmap *get_mapa_sprite();
+    int get_pos_x();
+    int get_pos_y();
+    int getVida();
+
+
+    //DSETRUCTOR
+    ~Personaje();
+
+
+};
+
+#endif // PERSONAJE_H

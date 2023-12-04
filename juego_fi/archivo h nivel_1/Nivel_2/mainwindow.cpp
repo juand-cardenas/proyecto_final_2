@@ -116,18 +116,18 @@ void MainWindow::Nivel_2_terminado(bool win_lose)
     timer_mov_colisiones_aparicion->stop();
 
     if(win_lose){
-        msgbox->setText(mensaje1);
+        Msgbox->setText(mensaje1);
     }
     else{
-        msgbox->setText(mensaje2);
+        Msgbox->setText(mensaje2);
     }
-    msgbox->setWindowTitle("Juego Terminado");
-    msgbox->setIcon(QMessageBox::Information);
-    msgbox->setStandardButtons(QMessageBox::Yes);
-    msgbox->addButton(QMessageBox::Close);
-    msgbox->setDefaultButton(QMessageBox::Yes);
-    msgbox->setEscapeButton(QMessageBox::Close);
-    if(QMessageBox::Yes==msgbox->exec()){
+    Msgbox->setWindowTitle("Juego Terminado");
+    Msgbox->setIcon(QMessageBox::Information);
+    Msgbox->setStandardButtons(QMessageBox::Yes);
+    Msgbox->addButton(QMessageBox::Close);
+    Msgbox->setDefaultButton(QMessageBox::Yes);
+    Msgbox->setEscapeButton(QMessageBox::Close);
+    if(QMessageBox::Yes==Msgbox->exec()){
         //Inicio Juego 1
     }
     else{
@@ -195,12 +195,12 @@ void MainWindow::Inicio_Nivel_2()
         }
     }
 
-    timer_cronometro=new QTimer();
+    timer_cronometro_2=new QTimer();
     timer_mov_colisiones_aparicion=new QTimer();
 
 
 
-    connect(timer_cronometro,SIGNAL(timeout()),this,SLOT(fin_dejuego()));
+    connect(timer_cronometro_2,SIGNAL(timeout()),this,SLOT(fin_dejuego()));
     connect(timer_mov_colisiones_aparicion,SIGNAL(timeout()),this,SLOT(colision_entre_enemigos()));
     connect(timer_mov_colisiones_aparicion,SIGNAL(timeout()),this,SLOT(mov_enemigos()));
     connect(timer_mov_colisiones_aparicion,SIGNAL(timeout()),this,SLOT(colision_enemigo_personaje()));
@@ -214,13 +214,13 @@ void MainWindow::Inicio_Nivel_2()
 
 
     cuenta_regresiva.setHMS(0,1,30);
-    ui->Cronometro->setText(cuenta_regresiva.toString("m:ss"));
-    timer_cronometro->start(1000);
+    ui->Cronometro_2->setText(cuenta_regresiva.toString("m:ss"));
+    timer_cronometro_2->start(1000);
 }
 MainWindow::~MainWindow()
 {
 
-    delete timer_cronometro;
+    delete timer_cronometro_2;
     delete timer_mov_colisiones_aparicion;
 
     for(int i=0;i<Mapa_enemigos.size();i++){
@@ -314,7 +314,7 @@ void MainWindow::colision_enemigo_personaje()
 
            }
            else{
-               timer_cronometro->stop();
+               timer_cronometro_2->stop();
                timer_mov_colisiones_aparicion->stop();
             Nivel_2_terminado(false);
            }
@@ -371,9 +371,9 @@ void MainWindow::aparicion_periodica_enemigos()
 void MainWindow::fin_dejuego()
 {
     cuenta_regresiva=cuenta_regresiva.addSecs(-1);
-    ui->Cronometro->setText(cuenta_regresiva.toString("m:ss"));
+    ui->Cronometro_2->setText(cuenta_regresiva.toString("m:ss"));
     if(cuenta_regresiva.toString()=="00:00:00"){
-        timer_cronometro->stop();
+        timer_cronometro_2->stop();
         timer_mov_colisiones_aparicion->stop();
         Nivel_2_terminado(true);
     }

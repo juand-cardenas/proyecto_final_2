@@ -34,7 +34,27 @@
      </rect>
     </property>
     <property name="text">
-     <string>cronometro</string>
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="Cronometro_2">
+    <property name="geometry">
+     <rect>
+      <x>260</x>
+      <y>30</y>
+      <width>221</width>
+      <height>61</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Arial Black</family>
+      <pointsize>18</pointsize>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text">
+     <string/>
     </property>
    </widget>
   </widget>
