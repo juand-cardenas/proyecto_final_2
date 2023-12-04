@@ -1,0 +1,8 @@
+<RCC>
+    <qresource prefix="/">
+        <file>imagenes_juego/cancha_2_copy.jpeg</file>
+        <file>imagenes_juego/Derecha.png</file>
+        <file>imagenes_juego/espalda.png</file>
+        <file>imagenes_juego/Izquierda.png</file>
+    </qresource>
+</RCC>
