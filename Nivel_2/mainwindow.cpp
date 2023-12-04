@@ -174,12 +174,7 @@ void MainWindow::Inicio_Nivel_2()
     }
 
 
-    l1= scene2->addLine(0,220,0,600);//Y
-    l2= scene2->addLine(0,260,700,260);//X
-
-
-
-    p1=new Personaje (400,550);
+    p1=new Personaje (400,520);
     scene2->addItem(p1);
     for(int i=0;i<4;i++){
         if(i==0){

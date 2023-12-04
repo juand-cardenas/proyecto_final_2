@@ -39,7 +39,7 @@ public:
 private:
     Ui::MainWindow *ui;
     QGraphicsScene *scene2;
-    QGraphicsLineItem *l1,*l2;
+
     QMap<int,Enemigos *> Mapa_enemigos;
 
     QVector<Proyectil_personaje*> vector_proyectiles;
