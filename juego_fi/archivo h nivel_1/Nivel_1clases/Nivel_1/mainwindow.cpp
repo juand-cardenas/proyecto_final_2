@@ -79,7 +79,7 @@ void MainWindow:: crear_grupo_de_bolitas(){
     int num,num_2;
     srand(time(NULL));
     for (size_t i=0;i<n;i++){
-        int rando_pos=27 + rand()%(689-27);
+        int rando_pos=-27 + rand()%(689-27);
         int rando_posy= -100 +rand()% (6-3);
         num=rando_pos;
         num_2=rando_posy;
@@ -98,7 +98,7 @@ void MainWindow :: linea_limite(){
 }
 
 void MainWindow :: inicio_juego(){
-    timed.setHMS(0,0,2);
+    timed.setHMS(0,3,25);
     ui->Cronometro->setText(timed.toString("m:ss"));
     timer_1->start(1000);
     timer_2->start(100);
@@ -108,7 +108,7 @@ void MainWindow :: inicio_juego(){
     srand(time(NULL));
     for (size_t i=0;i<n;i++){
         int rando_pos=-26 + rand()%(746);
-        int rando_posy= -110 +rand()% (120-3);
+        int rando_posy=-110 +rand()% (120-3);
         num=rando_pos;
         num_2=rando_posy;
         bolitas[i]->colocar_posiciones(num,num_2);
@@ -329,7 +329,7 @@ void MainWindow ::colicion(){
             //avatar->setPos(320,avatar->pos().y()-60);
             personaje->movimiento_arriba();
             for(int i=0;i<=cant_enemigos;i++){
-                int rando_pos=-27 + rand()%(687-27);
+                int rando_pos=-26 + rand()%(746);
                 int rando_posy= -110 +rand()% (120-3);
                 num=rando_pos;
                 num_2=rando_posy;
@@ -434,7 +434,7 @@ void MainWindow :: movimiento_bolitas_2(){
             bolitas[i]->setPos_y(bolitas[i]->getPos_y()+(auxiliar.getMovi_y()*h));
             bolitas[i]->colocar_posiciones(bolitas[i]->getPos_x(),bolitas[i]->getPos_y());
             if(bolitas[i]->getPos_y()>=650){
-                int rando_pos=-26+ rand()%(746);
+                int rando_pos=-26 + rand()%(746);
                 int rando_posy= -110 +rand()% (120-3);
                 num=rando_pos;
                 num_2=rando_posy;
@@ -525,6 +525,7 @@ void MainWindow::Nivel_2_terminado(bool win_lose)
         //Inicio Juego 1
         ui->Cronometro_2->hide();
         ui->Cronometro->show();
+        nivel_actual=true;
         escena1();
     }
     else{
